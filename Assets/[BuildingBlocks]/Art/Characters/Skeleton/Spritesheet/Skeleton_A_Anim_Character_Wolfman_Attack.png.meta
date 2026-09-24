@@ -1,0 +1,550 @@
+fileFormatVersion: 2
+guid: e275c2032bcb64f03acabea0b68e11d4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7434142665010265715
+    second: Skeleton_A_Anim_Character_Wolfman_Attack_0
+  - first:
+      213: -2296007250970068808
+    second: Skeleton_A_Anim_Character_Wolfman_Attack_1
+  - first:
+      213: -4206316902390146729
+    second: Skeleton_A_Anim_Character_Wolfman_Attack_2
+  - first:
+      213: 707494373011571002
+    second: Skeleton_A_Anim_Character_Wolfman_Attack_3
+  - first:
+      213: -3222608696498496568
+    second: Skeleton_A_Anim_Character_Wolfman_Attack_4
+  - first:
+      213: -4687868707767679679
+    second: Skeleton_A_Anim_Character_Wolfman_Attack_5
+  - first:
+      213: -7032180030636509480
+    second: Skeleton_A_Anim_Character_Wolfman_Attack_6
+  - first:
+      213: 8605673972635236028
+    second: Skeleton_A_Anim_Character_Wolfman_Attack_7
+  - first:
+      213: -1872762786949093468
+    second: Skeleton_A_Anim_Character_Wolfman_Attack_8
+  - first:
+      213: 7963603550231918247
+    second: Skeleton_A_Anim_Character_Wolfman_Attack_9
+  - first:
+      213: -2695318613685743861
+    second: Skeleton_A_Anim_Character_Wolfman_Attack_10
+  - first:
+      213: -7969737940191720670
+    second: Skeleton_A_Anim_Character_Wolfman_Attack_11
+  - first:
+      213: 7074992697111381965
+    second: Skeleton_A_Anim_Character_Wolfman_Attack_12
+  - first:
+      213: 2773142277418122736
+    second: Skeleton_A_Anim_Character_Wolfman_Attack_13
+  - first:
+      213: 6821298631313388385
+    second: Skeleton_A_Anim_Character_Wolfman_Attack_14
+  - first:
+      213: -3892166474040638079
+    second: Skeleton_A_Anim_Character_Wolfman_Attack_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Attack_0
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 3277
+        width: 451
+        height: 548
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37e3385bd516b2760800000000000000
+      internalID: 7434142665010265715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Attack_1
+      rect:
+        serializedVersion: 2
+        x: 1333
+        y: 3277
+        width: 422
+        height: 686
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b8353ce191f220e0800000000000000
+      internalID: -2296007250970068808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Attack_2
+      rect:
+        serializedVersion: 2
+        x: 2357
+        y: 3277
+        width: 368
+        height: 736
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7595054301920a5c0800000000000000
+      internalID: -4206316902390146729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Attack_3
+      rect:
+        serializedVersion: 2
+        x: 3382
+        y: 3277
+        width: 367
+        height: 736
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3141ff326681d900800000000000000
+      internalID: 707494373011571002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Attack_4
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 2251
+        width: 364
+        height: 732
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cb5f13f67ef643d0800000000000000
+      internalID: -3222608696498496568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Attack_5
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 2249
+        width: 380
+        height: 714
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14586d76f3851feb0800000000000000
+      internalID: -4687868707767679679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Attack_6
+      rect:
+        serializedVersion: 2
+        x: 2287
+        y: 2249
+        width: 428
+        height: 710
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d6b05d258da86e90800000000000000
+      internalID: -7032180030636509480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Attack_7
+      rect:
+        serializedVersion: 2
+        x: 3281
+        y: 2249
+        width: 454
+        height: 712
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb67fbf12ee7d6770800000000000000
+      internalID: 8605673972635236028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Attack_8
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 1229
+        width: 468
+        height: 716
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a72457ea2c9206e0800000000000000
+      internalID: -1872762786949093468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Attack_9
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 1227
+        width: 478
+        height: 716
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a6fc976c37648e60800000000000000
+      internalID: 7963603550231918247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Attack_10
+      rect:
+        serializedVersion: 2
+        x: 2345
+        y: 1227
+        width: 630
+        height: 446
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0f43c2500e489ad0800000000000000
+      internalID: -2695318613685743861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Attack_11
+      rect:
+        serializedVersion: 2
+        x: 3365
+        y: 1225
+        width: 616
+        height: 388
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22b4be1a19dc56190800000000000000
+      internalID: -7969737940191720670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Attack_12
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 199
+        width: 562
+        height: 498
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc78ec38f5c6f2260800000000000000
+      internalID: 7074992697111381965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Attack_13
+      rect:
+        serializedVersion: 2
+        x: 1335
+        y: 207
+        width: 578
+        height: 490
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fdff15653e2c7620800000000000000
+      internalID: 2773142277418122736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Attack_14
+      rect:
+        serializedVersion: 2
+        x: 2357
+        y: 205
+        width: 560
+        height: 480
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 163fa42e6fe1aae50800000000000000
+      internalID: 6821298631313388385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Attack_15
+      rect:
+        serializedVersion: 2
+        x: 3387
+        y: 197
+        width: 370
+        height: 528
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1858f14a63f3cf9c0800000000000000
+      internalID: -3892166474040638079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d81b102644f1846c7a1c8fec0d7996af
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: 8224acaf9e3e3409b9974db3717a9a5f, type: 3}
+      name: _NormalMap
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Skeleton_A_Anim_Character_Wolfman_Attack_0: 7434142665010265715
+      Skeleton_A_Anim_Character_Wolfman_Attack_1: -2296007250970068808
+      Skeleton_A_Anim_Character_Wolfman_Attack_10: -2695318613685743861
+      Skeleton_A_Anim_Character_Wolfman_Attack_11: -7969737940191720670
+      Skeleton_A_Anim_Character_Wolfman_Attack_12: 7074992697111381965
+      Skeleton_A_Anim_Character_Wolfman_Attack_13: 2773142277418122736
+      Skeleton_A_Anim_Character_Wolfman_Attack_14: 6821298631313388385
+      Skeleton_A_Anim_Character_Wolfman_Attack_15: -3892166474040638079
+      Skeleton_A_Anim_Character_Wolfman_Attack_2: -4206316902390146729
+      Skeleton_A_Anim_Character_Wolfman_Attack_3: 707494373011571002
+      Skeleton_A_Anim_Character_Wolfman_Attack_4: -3222608696498496568
+      Skeleton_A_Anim_Character_Wolfman_Attack_5: -4687868707767679679
+      Skeleton_A_Anim_Character_Wolfman_Attack_6: -7032180030636509480
+      Skeleton_A_Anim_Character_Wolfman_Attack_7: 8605673972635236028
+      Skeleton_A_Anim_Character_Wolfman_Attack_8: -1872762786949093468
+      Skeleton_A_Anim_Character_Wolfman_Attack_9: 7963603550231918247
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

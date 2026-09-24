@@ -1,0 +1,16 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="PlayerUI.uss"/>
+    <!-- blocks-* classes come from the shared theme (Runtime/UI/Theme), not from a Style above, so
+         they are available to any UIDocument in the project. The controls columns are built in C#
+         from the Control Sections list on PlayerHUD, which is why they are empty here. -->
+    <ui:VisualElement name="pause-menu" class="pause-menu blocks-overlay">
+        <ui:VisualElement name="pause-menu-card" class="blocks-modal pause-menu__card">
+            <ui:Label text="PAUSED" class="blocks-header blocks-header--space-bottom"/>
+            <ui:VisualElement name="pause-menu-columns" picking-mode="Ignore" class="pause-menu__columns"/>
+            <ui:VisualElement name="pause-menu-buttons" class="blocks-container--horizontal pause-menu__buttons">
+                <ui:Button name="resume-button" text="RESUME" class="blocks-button blocks-element--space-right"/>
+                <ui:Button name="quit-button" text="QUIT" class="blocks-button"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

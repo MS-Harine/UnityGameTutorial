@@ -1,0 +1,82 @@
+.unity-base-popup-field__input,
+.unity-enum-field__input {
+    background-color: var(--color-surface);
+    background-image: none;
+    border-width: 1px;
+    border-color: var(--color-border);
+    border-radius: 4px;
+    padding: 2px 6px 2px 8px;
+    transition-property: background-color, border-color;
+    transition-duration: 80ms;
+}
+
+.unity-base-popup-field__input:hover,
+.unity-enum-field__input:hover {
+    background-color: var(--color-surface-hover);
+}
+
+.unity-base-popup-field__input:focus,
+.unity-enum-field__input:focus {
+    border-color: var(--color-accent-border-strong);
+}
+
+.unity-base-popup-field__arrow,
+.unity-enum-field__arrow {
+    -unity-background-image-tint-color: var(--color-foreground-muted);
+}
+
+.unity-base-popup-field__input:hover .unity-base-popup-field__arrow,
+.unity-enum-field__input:hover .unity-enum-field__arrow {
+    -unity-background-image-tint-color: var(--color-foreground-strong);
+}
+
+.unity-base-text-field__input {
+    background-color: var(--color-inset);
+    background-image: none;
+    border-width: 1px;
+    border-color: var(--color-border-strong);
+    border-radius: 4px;
+    padding: 2px 6px;
+    transition-property: border-color;
+    transition-duration: 80ms;
+}
+
+.unity-base-text-field__input:focus {
+    border-color: var(--color-accent-border-strong);
+}
+
+.unity-base-slider__tracker {
+    background-color: var(--color-border);
+    border-width: 0;
+    border-radius: 2px;
+    height: 3px;
+    margin-top: 0;
+}
+
+.unity-base-slider__dragger {
+    background-color: var(--color-foreground);
+    border-width: 0;
+    border-radius: 6px;
+    width: 12px;
+    height: 12px;
+    margin-top: -6px;
+    transition-property: background-color, scale;
+    transition-duration: 80ms;
+}
+
+.unity-base-slider__dragger:hover {
+    background-color: var(--color-foreground-strong);
+    scale: 1.1 1.1;
+}
+
+.unity-toggle__checkmark {
+    border-width: 1px;
+    border-color: var(--color-border-strong);
+    border-radius: 3px;
+    background-color: var(--color-inset);
+}
+
+.unity-list-view__footer {
+    background-color: var(--color-transparent);
+    border-top-width: 0;
+}

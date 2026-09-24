@@ -1,0 +1,59 @@
+.unity-button {
+    background-color: var(--color-surface);
+    background-image: none;
+    border-width: 1px;
+    border-color: var(--color-border);
+    border-radius: 4px;
+    color: var(--color-foreground-secondary);
+    padding: 3px 10px;
+    margin: 2px;
+    -unity-text-align: middle-center;
+    transition-property: background-color, color, border-color;
+    transition-duration: 80ms;
+}
+
+.unity-button:hover {
+    background-color: var(--color-surface-hover);
+    color: var(--color-foreground-strong);
+    border-color: var(--color-border-strong);
+}
+
+.unity-button:active {
+    background-color: var(--color-surface-subtle);
+}
+
+.unity-button:disabled {
+    opacity: 0.45;
+}
+
+.blocks-button--primary {
+    background-color: var(--color-accent-background);
+    color: var(--color-accent-text);
+    -unity-font-style: bold;
+}
+
+.blocks-button--primary:hover {
+    background-color: var(--color-accent-background-hover);
+    color: var(--color-accent-text);
+    border-color: var(--color-accent-border);
+}
+
+.blocks-button--primary:active {
+    background-color: var(--color-accent-background-soft);
+}
+
+.blocks-button--quiet {
+    background-color: var(--color-surface-subtle);
+    color: var(--color-foreground-muted);
+    border-color: var(--color-border-subtle);
+}
+
+.blocks-button--quiet:hover {
+    background-color: var(--color-surface-hover);
+    color: var(--color-foreground-strong);
+    border-color: var(--color-border-subtle-strong);
+}
+
+.blocks-button--quiet:active {
+    background-color: var(--color-surface-subtle);
+}

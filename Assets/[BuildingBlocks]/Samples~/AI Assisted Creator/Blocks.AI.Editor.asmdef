@@ -1,0 +1,29 @@
+{
+    "name": "Blocks.AI.Editor",
+    "rootNamespace": "Blocks",
+    "references": [
+        "Blocks.Runtime",
+        "Blocks.Editor",
+        "Unity.AI.Assistant.API.Editor",
+        "Unity.AI.Assistant.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "BLOCKS_AI_ASSISTANT"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.unity.ai.assistant",
+            "expression": "",
+            "define": "BLOCKS_AI_ASSISTANT"
+        }
+    ],
+    "noEngineReferences": false
+}

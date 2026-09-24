@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d09e26172e15ce64690afb42c6708c68
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 190721
+  packageName: Dragon Crashers - URP 2D Sample Project
+  packageVersion: 1.61
+  assetPath: Assets/VFX/UnitAbilities/Wolfman/EarthShatter/Materials/Mat_Wolfman_VFX_RockSpike.mat
+  uploadId: 722358

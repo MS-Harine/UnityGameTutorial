@@ -1,0 +1,23 @@
+/* Dark card, centred by a blocks-menu wrapper. */
+.blocks-modal {
+    background-color: var(--color-modal-background);
+    border-radius: var(--radius-md);
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 0;
+    flex-shrink: 1;
+    padding: var(--padding-lg) var(--padding-xl);
+}
+
+/* Full-screen dim behind a menu, so what's underneath stays readable but recedes. It also does the
+   centring, which is why the original system's separate blocks-menu wrapper isn't needed here. */
+.blocks-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-overlay-background);
+    justify-content: center;
+    align-items: center;
+}

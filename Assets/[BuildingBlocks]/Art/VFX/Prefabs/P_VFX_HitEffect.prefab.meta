@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: bd923c11c31332243b786485e470ded9
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 190721
+  packageName: Dragon Crashers - URP 2D Sample Project
+  packageVersion: 1.61
+  assetPath: Assets/VFX/HitEffect/_Prefabs/P_VFX_HitEffect.prefab
+  uploadId: 722358

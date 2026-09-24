@@ -1,0 +1,111 @@
+.blocks-ai-input {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 12px;
+    padding: 4px 4px 4px 4px;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: var(--color-border);
+    background-color: var(--color-well-background);
+    transition-property: border-color, background-color;
+    transition-duration: 120ms;
+}
+
+.blocks-ai-input--focused {
+    border-color: var(--color-hover-border);
+    background-color: var(--color-inset-strong);
+}
+
+.blocks-pick-ai .blocks-ai-input {
+    margin-top: 14px;
+}
+
+.blocks-ai-input__field {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
+    margin-right: 4px;
+}
+
+.blocks-ai-input__field .unity-base-text-field__input {
+    border-width: 0;
+    border-radius: 8px;
+    padding: 6px 10px;
+    background-color: var(--color-transparent);
+}
+
+.blocks-ai-input__field .unity-base-text-field__input:focus {
+    border-width: 0;
+    background-color: var(--color-transparent);
+}
+
+.blocks-ai-input__send {
+    flex-shrink: 0;
+    width: 34px;
+    min-width: 34px;
+    height: 28px;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+    border-radius: 7px;
+    font-size: 13px;
+    -unity-text-align: middle-center;
+}
+
+.blocks-ai-input__resume-row {
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 6px;
+}
+
+.blocks-ai-input__resume {
+    color: var(--color-accent-text);
+    font-size: 11px;
+    -unity-font-style: bold;
+    padding: 2px 6px;
+    margin-right: 0;
+}
+
+.blocks-ai-input__resume:hover {
+    color: var(--color-foreground-strong);
+    background-color: var(--color-accent-background);
+}
+
+.blocks-ai-working {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 4px 2px;
+}
+
+.blocks-pick-ai .blocks-ai-working {
+    margin-top: 14px;
+    min-height: 38px;
+    padding: 4px 12px;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: var(--color-border);
+    background-color: var(--color-well-background);
+}
+
+.blocks-ai-working__dots {
+    flex-direction: row;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.blocks-ai-working__dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 99px;
+    margin-right: 5px;
+    background-color: var(--color-hover);
+    transform-origin: center;
+}
+
+.blocks-ai-working__label {
+    color: var(--color-foreground-muted);
+    font-size: 11px;
+    -unity-font-style: bold;
+}

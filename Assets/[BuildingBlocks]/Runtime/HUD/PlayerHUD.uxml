@@ -1,0 +1,33 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="PauseMenu" src="PauseMenu.uxml"/>
+    <Style src="StatBars.uss"/>
+    <Style src="PlayerUI.uss"/>
+    <!-- Everything the player sees while playing lives under hud-layer, which is what fades out when
+         the game is paused. The menu is a sibling, so it isn't caught by that fade. -->
+    <ui:VisualElement name="hud-layer" picking-mode="Ignore" class="hud-layer">
+        <ui:VisualElement name="player-hud-corner" picking-mode="Ignore" class="player-hud-corner">
+            <ui:VisualElement name="avatar-frame" picking-mode="Ignore" class="avatar-frame">
+                <ui:VisualElement name="avatar-image" picking-mode="Ignore" class="avatar-image"/>
+                <ui:VisualElement name="avatar-ring" picking-mode="Ignore" class="avatar-ring"/>
+            </ui:VisualElement>
+            <!-- Vitals above, attacks below, both taking their width from this column so they line up
+                 down the left edge next to the portrait. -->
+            <ui:VisualElement picking-mode="Ignore" class="player-hud-corner__column">
+                <ui:VisualElement name="stat-bar-stack" picking-mode="Ignore" class="stat-bar-stack stat-bar-stack--corner"/>
+                <!-- Filled in by AttackSlotsView from the player's attack ability, so the slots always
+                     match whatever the attacks are actually bound to. -->
+                <ui:VisualElement name="attack-slots" picking-mode="Ignore" class="attack-slots"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="pause-hint" picking-mode="Ignore" class="pause-hint">
+            <ui:Label name="pause-hint-key" text="ESC" picking-mode="Ignore" class="pause-hint__key"/>
+            <ui:Label name="pause-hint-label" text="Pause" picking-mode="Ignore" class="blocks-label--dim pause-hint__label"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="respawn-overlay" picking-mode="Ignore" class="blocks-overlay respawn-overlay">
+            <ui:Label name="respawn-message" text="RESPAWNING" picking-mode="Ignore" class="blocks-header respawn-overlay__message"/>
+            <ui:VisualElement picking-mode="Ignore" class="respawn-overlay__divider"/>
+            <ui:Label name="respawn-countdown" text="3" picking-mode="Ignore" class="respawn-overlay__countdown"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:Instance template="PauseMenu" name="pause-menu-host" class="pause-menu-host"/>
+</ui:UXML>

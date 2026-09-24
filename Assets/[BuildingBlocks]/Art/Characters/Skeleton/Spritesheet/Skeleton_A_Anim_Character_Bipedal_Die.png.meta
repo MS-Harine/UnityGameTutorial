@@ -1,0 +1,630 @@
+fileFormatVersion: 2
+guid: 0441393dd00424fa5a68a9a60895b93e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5981315424588605675
+    second: Skeleton_A_Anim_Character_Bipedal_Die_0
+  - first:
+      213: -1128702901096689428
+    second: Skeleton_A_Anim_Character_Bipedal_Die_1
+  - first:
+      213: -5759513183392014254
+    second: Skeleton_A_Anim_Character_Bipedal_Die_2
+  - first:
+      213: -285266914221122726
+    second: Skeleton_A_Anim_Character_Bipedal_Die_3
+  - first:
+      213: 8622716213236214199
+    second: Skeleton_A_Anim_Character_Bipedal_Die_4
+  - first:
+      213: 3601045564709306211
+    second: Skeleton_A_Anim_Character_Bipedal_Die_5
+  - first:
+      213: 5883329106147627504
+    second: Skeleton_A_Anim_Character_Bipedal_Die_6
+  - first:
+      213: 2225293311399696497
+    second: Skeleton_A_Anim_Character_Bipedal_Die_7
+  - first:
+      213: 1355174989386342413
+    second: Skeleton_A_Anim_Character_Bipedal_Die_8
+  - first:
+      213: 2529298042476713196
+    second: Skeleton_A_Anim_Character_Bipedal_Die_9
+  - first:
+      213: -8139217423309780108
+    second: Skeleton_A_Anim_Character_Bipedal_Die_10
+  - first:
+      213: -8852175855560358755
+    second: Skeleton_A_Anim_Character_Bipedal_Die_11
+  - first:
+      213: -9207484316660687609
+    second: Skeleton_A_Anim_Character_Bipedal_Die_12
+  - first:
+      213: 5038751389624053618
+    second: Skeleton_A_Anim_Character_Bipedal_Die_13
+  - first:
+      213: 6106684554872367394
+    second: Skeleton_A_Anim_Character_Bipedal_Die_14
+  - first:
+      213: -5528124097275219212
+    second: Skeleton_A_Anim_Character_Bipedal_Die_15
+  - first:
+      213: 4890939412093290039
+    second: Skeleton_A_Anim_Character_Bipedal_Die_16
+  - first:
+      213: -5980245192673549637
+    second: Skeleton_A_Anim_Character_Bipedal_Die_17
+  - first:
+      213: 8797755057465414470
+    second: Skeleton_A_Anim_Character_Bipedal_Die_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Die_0
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 4294
+        width: 495
+        height: 565
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3c781c1fb774ad2938a0f5f2a2db14
+      internalID: -5981315424588605675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Die_1
+      rect:
+        serializedVersion: 2
+        x: 1244
+        y: 4339
+        width: 412
+        height: 567
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 741d9f0ca982748d0a9a69950770b55a
+      internalID: -1128702901096689428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Die_2
+      rect:
+        serializedVersion: 2
+        x: 2214
+        y: 4454
+        width: 500
+        height: 375
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de6a90355dde44679b7d014e5d8136d5
+      internalID: -5759513183392014254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Die_3
+      rect:
+        serializedVersion: 2
+        x: 3226
+        y: 4354
+        width: 410
+        height: 392
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5d24f2cea10242ce9fe3d07fdcfb4d6
+      internalID: -285266914221122726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Die_4
+      rect:
+        serializedVersion: 2
+        x: 4191
+        y: 4271
+        width: 483
+        height: 293
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d49ae64744faf46db8516881c4730f35
+      internalID: 8622716213236214199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Die_5
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 3196
+        width: 560
+        height: 333
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce3e57e0ff2aa4f16a835348ffa8ce1b
+      internalID: 3601045564709306211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Die_6
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 3194
+        width: 548
+        height: 352
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c072d2a6e8d649e6bc0fbd15b571d92
+      internalID: 5883329106147627504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Die_7
+      rect:
+        serializedVersion: 2
+        x: 2124
+        y: 3176
+        width: 672
+        height: 268
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc3f8595b9dbb4054a138912c0c8a4e0
+      internalID: 2225293311399696497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Die_8
+      rect:
+        serializedVersion: 2
+        x: 3146
+        y: 3164
+        width: 648
+        height: 280
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60b63434b29e24601b3c5d0383eb1a68
+      internalID: 1355174989386342413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Die_9
+      rect:
+        serializedVersion: 2
+        x: 4171
+        y: 3126
+        width: 652
+        height: 318
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5632b03c53aa94170a4dff7ffc7bba2c
+      internalID: 2529298042476713196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Die_10
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 2096
+        width: 648
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82d4648ab44674300909e010da96c21b
+      internalID: -8139217423309780108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Die_11
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 2096
+        width: 647
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b9d400828c8741d18f08231dc57ce71
+      internalID: -8852175855560358755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Die_12
+      rect:
+        serializedVersion: 2
+        x: 2124
+        y: 2096
+        width: 647
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a1d7d66d79384dee81c53e068b269c8
+      internalID: -9207484316660687609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Die_13
+      rect:
+        serializedVersion: 2
+        x: 3146
+        y: 2096
+        width: 648
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97ea6bce7af044059a59a5d0502c269a
+      internalID: 5038751389624053618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Die_14
+      rect:
+        serializedVersion: 2
+        x: 4171
+        y: 2096
+        width: 648
+        height: 325
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0a26817bd9dc4f5dbdbe5b4715fc2ac
+      internalID: 6106684554872367394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Die_15
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 1074
+        width: 648
+        height: 322
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4f55f61bd77341f3bc81020e1cd17db
+      internalID: -5528124097275219212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Die_16
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 1074
+        width: 647
+        height: 322
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c8670d20f13742ca8874f679722105f
+      internalID: 4890939412093290039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Die_17
+      rect:
+        serializedVersion: 2
+        x: 2124
+        y: 1074
+        width: 647
+        height: 322
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65b4636e7f7304eb681c1d3840e0457e
+      internalID: -5980245192673549637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Die_18
+      rect:
+        serializedVersion: 2
+        x: 3146
+        y: 1074
+        width: 648
+        height: 322
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7442f36f4191e4df880e5c0c6ef64312
+      internalID: 8797755057465414470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: bcfbfe8310cb34ec2a5122d02852c68a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: b32c91da9bb1b47819a3ba6673c4bb54, type: 3}
+      name: _NormalMap
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceOnImport
+        value: False
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Skeleton_A_Anim_Character_Bipedal_Die_0: -5981315424588605675
+      Skeleton_A_Anim_Character_Bipedal_Die_1: -1128702901096689428
+      Skeleton_A_Anim_Character_Bipedal_Die_10: -8139217423309780108
+      Skeleton_A_Anim_Character_Bipedal_Die_11: -8852175855560358755
+      Skeleton_A_Anim_Character_Bipedal_Die_12: -9207484316660687609
+      Skeleton_A_Anim_Character_Bipedal_Die_13: 5038751389624053618
+      Skeleton_A_Anim_Character_Bipedal_Die_14: 6106684554872367394
+      Skeleton_A_Anim_Character_Bipedal_Die_15: -5528124097275219212
+      Skeleton_A_Anim_Character_Bipedal_Die_16: 4890939412093290039
+      Skeleton_A_Anim_Character_Bipedal_Die_17: -5980245192673549637
+      Skeleton_A_Anim_Character_Bipedal_Die_18: 8797755057465414470
+      Skeleton_A_Anim_Character_Bipedal_Die_2: -5759513183392014254
+      Skeleton_A_Anim_Character_Bipedal_Die_3: -285266914221122726
+      Skeleton_A_Anim_Character_Bipedal_Die_4: 8622716213236214199
+      Skeleton_A_Anim_Character_Bipedal_Die_5: 3601045564709306211
+      Skeleton_A_Anim_Character_Bipedal_Die_6: 5883329106147627504
+      Skeleton_A_Anim_Character_Bipedal_Die_7: 2225293311399696497
+      Skeleton_A_Anim_Character_Bipedal_Die_8: 1355174989386342413
+      Skeleton_A_Anim_Character_Bipedal_Die_9: 2529298042476713196
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

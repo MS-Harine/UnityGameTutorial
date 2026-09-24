@@ -1,0 +1,37 @@
+.blocks-actions-list {
+    margin-top: 4px;
+    padding: 10px 12px;
+    background-color: var(--color-nested-background);
+    border-width: 1px;
+    border-color: var(--color-border);
+    border-radius: 8px;
+}
+
+.blocks-bullet-row {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-bottom: 4px;
+}
+
+.blocks-bullet-row__dot {
+    color: var(--color-accent);
+    font-size: 12px;
+    -unity-font-style: bold;
+    margin-right: 8px;
+    margin-left: 2px;
+}
+
+.blocks-bullet-row__text {
+    flex-grow: 1;
+    color: var(--color-foreground-secondary);
+    font-size: 11px;
+    white-space: normal;
+}
+
+.blocks-classname {
+    color: var(--color-foreground-strong);
+    font-size: 13px;
+    -unity-font-style: bold;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}

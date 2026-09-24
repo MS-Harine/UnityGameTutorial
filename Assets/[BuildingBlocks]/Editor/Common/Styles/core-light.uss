@@ -1,0 +1,62 @@
+
+:root {
+    --color-window-background: var(--unity-colors-window-background, rgb(194, 194, 194));
+    --color-topbar-background: var(--unity-colors-toolbar-background, rgb(222, 222, 222));
+    --color-nested-background: var(--unity-colors-default-background, rgb(207, 207, 207));
+    --color-card-background:   var(--unity-colors-helpbox-background, rgb(214, 214, 214));
+    --color-well-background:   rgba(0, 0, 0, 0.08);
+    --color-deep-background:   rgba(0, 0, 0, 0.14);
+
+    --color-border:        var(--unity-colors-default-border, rgba(0, 0, 0, 0.30));
+    --color-divider:       rgba(0, 0, 0, 0.10);
+
+    --color-foreground:           var(--unity-colors-label-text, rgb(20, 20, 20));
+    --color-foreground-strong:    var(--unity-colors-label-text, rgb(10, 10, 10));
+    --color-foreground-secondary: rgb(40, 40, 40);
+    --color-foreground-muted:     rgb(80, 80, 80);
+    --color-foreground-dim:       rgb(110, 110, 110);
+
+    --color-surface:              var(--unity-colors-button-background, rgba(0, 0, 0, 0.04));
+    --color-surface-subtle:       rgba(0, 0, 0, 0.03);
+    --color-surface-hover:        var(--unity-colors-button-background-hover, rgba(0, 0, 0, 0.08));
+    --color-border-subtle:        rgba(0, 0, 0, 0.10);
+    --color-border-subtle-strong: rgba(0, 0, 0, 0.18);
+    --color-border-strong:        var(--unity-colors-default-border, rgba(0, 0, 0, 0.40));
+    --color-inset:                var(--unity-colors-object_field-background, rgba(255, 255, 255, 0.60));
+    --color-inset-strong:         rgba(0, 0, 0, 0.06);
+    --color-transparent:          rgba(0, 0, 0, 0);
+
+    --color-accent:                  rgb(45, 104, 170);
+    --color-accent-bright:           rgb(54, 118, 190);
+    --color-accent-text:             rgb(30, 90, 160);
+    --color-accent-on:               rgb(255, 255, 255);
+    --color-accent-background-soft:  rgba(58, 114, 176, 0.12);
+    --color-accent-background:       rgba(58, 114, 176, 0.18);
+    --color-accent-background-hover: rgba(64, 128, 196, 0.26);
+    --color-accent-border:           rgba(58, 114, 176, 0.45);
+    --color-accent-border-strong:    rgb(60, 120, 190);
+
+    --color-warning:            rgb(176, 120, 40);
+    --color-warning-text:       rgb(120, 80, 20);
+    --color-warning-background: rgba(217, 154, 72, 0.14);
+    --color-warning-border:     rgba(176, 120, 40, 0.40);
+
+    --color-success:            rgb(56, 126, 74);
+    --color-success-text:       rgb(30, 96, 48);
+    --color-success-background: rgba(56, 126, 74, 0.12);
+    --color-success-border:     rgba(56, 126, 74, 0.40);
+
+    --color-hover:            rgb(74, 140, 210);
+    --color-hover-border:     rgb(70, 130, 200);
+    --color-hover-background: var(--unity-colors-highlight-background, rgb(205, 215, 230));
+}
+
+.unity-scroller .unity-base-slider__dragger {
+    background-color: var(--unity-colors-scrollbar_thumb-background, rgb(149, 149, 149));
+    scale: 1 1;
+}
+
+.unity-scroller .unity-base-slider__dragger:hover {
+    background-color: var(--unity-colors-scrollbar_thumb-background, rgb(122, 122, 122));
+    scale: 1 1;
+}

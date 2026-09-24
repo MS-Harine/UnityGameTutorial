@@ -1,0 +1,53 @@
+
+:root {
+    --color-window-background: rgb(30, 30, 30);
+    --color-topbar-background: rgb(38, 38, 38);
+    --color-nested-background: rgb(42, 42, 42);
+    --color-card-background:   rgb(48, 48, 48);
+    --color-well-background:   rgba(0, 0, 0, 0.25);
+    --color-deep-background:   rgb(20, 20, 20);
+
+    --color-border:        rgba(0, 0, 0, 0.45);
+    --color-divider:       rgba(255, 255, 255, 0.07);
+
+    --color-foreground:           rgb(240, 240, 240);
+    --color-foreground-strong:    rgb(245, 245, 245);
+    --color-foreground-secondary: rgba(210, 210, 210, 0.85);
+    --color-foreground-muted:     rgba(180, 180, 180, 0.85);
+    --color-foreground-dim:       rgba(170, 170, 170, 0.65);
+
+
+    --color-surface:              var(--unity-colors-button-background, rgba(255, 255, 255, 0.08));
+    --color-surface-subtle:       rgba(255, 255, 255, 0.05);
+    --color-surface-hover:        var(--unity-colors-button-background-hover, rgba(255, 255, 255, 0.13));
+    --color-border-subtle:        rgba(255, 255, 255, 0.10);
+    --color-border-subtle-strong: rgba(255, 255, 255, 0.18);
+    --color-border-strong:        var(--unity-colors-default-border, rgba(0, 0, 0, 0.55));
+    --color-inset:                var(--unity-colors-object_field-background, rgba(0, 0, 0, 0.22));
+    --color-inset-strong:         rgba(0, 0, 0, 0.30);
+    --color-transparent:          rgba(0, 0, 0, 0);
+
+    --color-accent:                  rgb(58, 114, 176);
+    --color-accent-bright:           rgb(64, 128, 196);
+    --color-accent-text:             rgb(124, 176, 234);
+    --color-accent-on:               rgb(255, 255, 255);
+    --color-accent-background-soft:  rgba(58, 114, 176, 0.14);
+    --color-accent-background:       rgba(58, 114, 176, 0.22);
+    --color-accent-background-hover: rgba(64, 128, 196, 0.30);
+    --color-accent-border:           rgba(58, 114, 176, 0.45);
+    --color-accent-border-strong:    rgb(96, 158, 226);
+
+    --color-warning:            rgb(217, 154, 72);
+    --color-warning-text:       rgb(240, 210, 163);
+    --color-warning-background: rgba(217, 154, 72, 0.08);
+    --color-warning-border:     rgba(217, 154, 72, 0.35);
+
+    --color-success:            rgb(90, 164, 105);
+    --color-success-text:       rgb(142, 207, 156);
+    --color-success-background: rgba(90, 164, 105, 0.10);
+    --color-success-border:     rgba(90, 164, 105, 0.40);
+
+    --color-hover:            rgb(74, 140, 210);
+    --color-hover-border:     rgb(82, 148, 220);
+    --color-hover-background: rgb(50, 58, 70);
+}

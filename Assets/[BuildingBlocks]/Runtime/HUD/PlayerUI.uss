@@ -1,0 +1,368 @@
+/* The player's screen: HUD placement, the corner pause hint, the respawn overlay, and the parts of
+   the pause menu the shared blocks-* classes don't already cover.
+
+   Everything here is built from the theme's tokens (Runtime/UI/Theme), so colours, spacing and text
+   sizes stay in step with the rest of the UI. Stat bar layout is in StatBars.uss, which the enemy
+   HUD shares; the bars themselves are styled by the theme's blocks-progress-bar. */
+
+/* Both of these fill the panel so the absolutely-positioned things inside them have something to
+   measure against — a wrapper that sizes to its content would collapse to nothing. */
+.hud-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.pause-menu-host {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* ---------------------------------------------------------------------------------------------
+   HUD corner — avatar and stat bars, bottom left.
+   --------------------------------------------------------------------------------------------- */
+/* Top-aligned rather than centred: the column beside the portrait grows downwards as the attack slots
+   and their hint stack up under the bars, and the portrait should stay level with the top bar. */
+.player-hud-corner {
+    position: absolute;
+    bottom: var(--margin-sm);
+    left: var(--margin-md);
+    /* Sized by the widest thing in it, which is an attack slot's key caption. The two slots split
+       whatever is left after the portrait, and "R, Right Shift" measures ~103px at --text-xs, so each
+       slot needs about that much to itself. The template's own bindings clip below ~320px. */
+    width: 340px;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.player-hud-corner__column {
+    flex-grow: 1;
+}
+
+.avatar-frame {
+    width: 84px;
+    height: 84px;
+    margin-right: var(--margin-sm);
+    flex-shrink: 0;
+}
+
+.avatar-image {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border-radius: 50%;
+    background-image: url("../../Art/UI/Sprite_Avatar_Knight.png");
+    background-size: cover;
+    background-position-x: left;
+}
+
+/* The texture is already a ring — an opaque band 8% of its width, transparent inside it and outside
+   it — so this only tints it. (The border-radius is belt and braces: it would clip a square texture
+   to a circle, but this one needs no clipping.) */
+.avatar-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    background-image: url("../../Art/UI/UI_Hollow_Ring_White.png");
+    -unity-background-image-tint-color: var(--color-border);
+}
+
+/* ---------------------------------------------------------------------------------------------
+   Attack slots — under the stat bars in the player corner. One pill per attack, side by side, so it
+   reads at a glance that there are two of them. Each wears the pause menu's own button chrome
+   (blocks-button, shrunk by blocks-button--sm) because that is already the project's shape for "a
+   thing you press"; the charge then sweeps across the pill from the left, and at full charge the pill
+   inverts to solid gold the way blocks-button does on hover. Both attacks share a single charge, so
+   only one pill ever fills at a time.
+
+   The pill holds the attack's name and nothing else, which is what lets it keep blocks-button--sm's own
+   height and rounding untouched; the keys that fire it are a caption underneath, outside the pill. That
+   split is worth more than it looks. A key list is much wider than a name — "R, Right Shift" is roughly
+   twice "Ranged" — so putting it inside the pill means either a second line, which stops the pill from
+   being a pill, or a column wide enough to fit the longest binding through the pill's padding. Below it,
+   the caption has the slot's whole width to itself.
+
+   Both strings come from where the pause menu's rows get theirs, so the two can never disagree about
+   what is bound — but the emphasis runs the other way. The menu is a table you go and read, where the
+   keys are the answer; the corner is glanced at, where the attack's name is. Side by side rather than
+   stacked full-width like the menu's rows, because two more full-width rounded bars sitting directly
+   under the stat bars would read as two more stat bars.
+   --------------------------------------------------------------------------------------------- */
+:root {
+    /* Deliberately the same gold AttackFeedback flashes the player sprite with (its Full Charge
+       Flash Color), so the pill and the character read as one event. Change the two together. */
+    --color-charge-full: rgb(255, 162, 59);
+    /* Kept faint so the label stays readable while the sweep passes under it — the loud moment is
+       meant to be the flip to gold, not the fill itself. */
+    --color-charge: rgba(255, 255, 255, 0.28);
+}
+
+.attack-slots {
+    margin-top: var(--base-unit-sm);
+}
+
+/* The negative margin cancels the slots' own side margins where they meet the row's outer edges, so
+   the pair lines up flush with the stat bars above and that 4px only ever shows as the gap between the
+   two pills. A literal because it has to be exactly --base-unit-xs negated, and USS has no gap. */
+.attack-slots__row {
+    flex-direction: row;
+    margin: 0 -4px;
+}
+
+/* The one thing two pills can't say by themselves is that the button is worth holding. Retired for
+   good once a charge has been held to full — see AttackSlotsView. */
+.attack-slots__hint {
+    font-size: var(--text-xs);
+    -unity-text-align: middle-center;
+    color: var(--color-inactive);
+    margin-top: var(--base-unit-xs);
+    transition-property: opacity;
+    transition-duration: 0.3s;
+}
+
+.attack-slots__hint--hidden {
+    opacity: 0;
+}
+
+/* flex-basis 0 with flex-grow 1 splits the column evenly between the two, so they stay the same width
+   whatever they are named — at the cost of clipping an unusually long rebinding rather than growing to
+   fit it. The side margins here are what the row pulls back off its outer edges. */
+.attack-slot {
+    flex-grow: 1;
+    flex-basis: 0;
+    margin: 0 var(--base-unit-xs);
+    transition-property: opacity, scale;
+    transition-duration: 0.12s, 0.08s;
+}
+
+/* Dimmed rather than hidden: an attack that can't be used this instant is still an attack the player
+   has, and a slot disappearing and coming back on every jump would read as a bug. */
+.attack-slot--dim {
+    opacity: 0.35;
+}
+
+/* One quick pop at the full-charge threshold. The player's sprite is already pulsing by then, so the
+   pill confirming it with a single hard change is louder than both doing the same thing. */
+.attack-slot--full {
+    scale: 1.06;
+}
+
+/* Height, rounding and padding are all left to blocks-button--sm, which is the whole point of the name
+   living in here on its own: one line of text is what that class was built for, so the slot is the same
+   28px pill as the rest of the UI without this file touching any of it.
+
+   Only two things to add. justify-content centres the name against the pill's fixed height, and
+   overflow clips the charge fill to the rounded ends. No align-items: the default stretch is what hands
+   the name the pill's full width, which is what centres it sideways. */
+.attack-slot__pill {
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Inverted exactly the way blocks-button:hover inverts — solid fill, dark text — so the full-charge
+   moment reads with the design system rather than against it. The text colour has to be set on the name
+   rather than here, because it carries a colour of its own and a direct match beats an inherited value.
+
+   The key caption is deliberately left out: it sits outside the pill, over the game rather than over the
+   gold, so turning it dark would black it out against the background instead of inverting it. */
+.attack-slot--full .attack-slot__pill {
+    border-color: var(--color-charge-full);
+}
+
+.attack-slot--full .attack-slot__name {
+    color: var(--color-dark-content);
+}
+
+/* Width is written every frame from the live charge, so there is deliberately no transition here —
+   this is also why the charge isn't a blocks-progress-bar, which eases its width over 0.3s and would
+   lag half of a 0.6s charge. */
+.attack-slot__fill {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    background-color: var(--color-charge);
+}
+
+.attack-slot--full .attack-slot__fill {
+    background-color: var(--color-charge-full);
+}
+
+/* Letter-spacing has to be zeroed on both rather than left to blocks-button--sm, which does zero it:
+   the theme's `*` rule puts its 2px on every element directly, and a direct match beats an inherited
+   value. Over "R, Right Shift" that alone is 28px of width — the difference between the caption fitting
+   its slot and spilling out of it.
+
+   The 100% width is what centres them: it hands each label its container's full width so
+   -unity-text-align can do the centring, rather than flexbox centring a box measured from the text.
+   flex-grow 0 holds each to one line's height, so neither can stretch to fill what it sits in. */
+.attack-slot__name,
+.attack-slot__keys {
+    width: 100%;
+    letter-spacing: 0;
+    -unity-text-align: middle-center;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+/* The header. The attack's name is what the player scans for, so it takes the size and the full-strength
+   colour; the keys below are the footnote. Bold and white both come down from blocks-button, and the size
+   matches what blocks-button--sm puts on the pill — but it still has to be restated, because the theme's
+   `*` rule lands --text-md on the label directly and that beats anything inherited. */
+.attack-slot__name {
+    font-size: var(--text-sm);
+    color: var(--color-default);
+    -unity-font-style: bold;
+}
+
+/* The subtext, under the pill rather than in it: smallest size in the scale, dim, and unbolded against
+   the weight it would otherwise inherit. 2px of gap rather than a spacing token, because the pill's 2px
+   border is already a strong line and anything more reads as a caption for the HUD rather than for the
+   pill directly above it. */
+.attack-slot__keys {
+    font-size: var(--text-xs);
+    color: var(--color-neutral);
+    -unity-font-style: normal;
+    margin-top: 2px;
+}
+
+/* ---------------------------------------------------------------------------------------------
+   Corner hint — top right, where the reference HUD stacks its notifications.
+   --------------------------------------------------------------------------------------------- */
+.pause-hint {
+    position: absolute;
+    top: var(--margin-md);
+    right: var(--margin-md);
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--color-panel-background);
+    /* Same token as .blocks-modal, so the chip and the menu card are rounded alike. At this height
+       that reads as a pill, which is also what the buttons do. */
+    border-radius: 12px;
+    padding: var(--padding-sm) var(--padding-md);
+}
+
+/* Boxed key, so it reads as something to press rather than as a word in the sentence. Its 8px is a
+   literal rather than a token on purpose: the scale jumps 4 -> 16, and 4 is too sharp against the
+   chip while 16 rounds the box off into a pill and stops it reading as a key. */
+.pause-hint__key {
+    min-width: 40px;
+    padding: 0 var(--base-unit-sm);
+    margin-right: var(--base-unit-sm);
+    font-size: var(--text-sm);
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    color: var(--color-default);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--color-border);
+    border-width: 1px;
+    border-radius: 4px;
+}
+
+.pause-hint__label {
+    font-size: var(--text-sm);
+}
+
+/* ---------------------------------------------------------------------------------------------
+   Respawn overlay — the reference HUD's message overlay: dim the screen, name what is happening,
+   then a single large number.
+   --------------------------------------------------------------------------------------------- */
+.respawn-overlay {
+    display: none;
+}
+
+.respawn-overlay__message {
+    letter-spacing: var(--letterspacing-lg);
+}
+
+.respawn-overlay__divider {
+    width: 194px;
+    height: var(--base-unit-xs);
+    background-color: var(--color-default);
+    margin-top: var(--margin-sm);
+    margin-bottom: var(--margin-sm);
+}
+
+.respawn-overlay__countdown {
+    font-size: var(--text-display);
+    -unity-font-style: bold;
+    color: var(--color-default);
+    -unity-text-align: middle-center;
+    letter-spacing: 0;
+}
+
+/* ---------------------------------------------------------------------------------------------
+   Pause menu — blocks-overlay dims, blocks-modal is the card. Only sizing and the controls
+   columns are left to do here.
+   --------------------------------------------------------------------------------------------- */
+
+/* Hidden here as well as in code, so it can't flash on screen for the frame before Start runs. */
+.pause-menu {
+    display: none;
+}
+
+.pause-menu__card {
+    min-width: 560px;
+    max-width: 720px;
+}
+
+.pause-menu__columns {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.pause-menu__section {
+    min-width: 240px;
+    margin: 0 var(--margin-md);
+}
+
+.pause-menu__header {
+    width: 100%;
+    padding-bottom: var(--base-unit-sm);
+    margin-bottom: var(--margin-sm);
+    border-bottom-width: 1px;
+    border-bottom-color: var(--color-border);
+}
+
+.pause-menu__rows {
+    width: 100%;
+}
+
+/* Name on the left, keys pushed to the right, as a settings row reads. */
+.pause-menu__row {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--margin-xs);
+}
+
+.pause-menu__row-name {
+    font-size: var(--text-sm);
+    color: var(--color-neutral);
+    margin-right: var(--margin-sm);
+    flex-shrink: 0;
+}
+
+.pause-menu__row-keys {
+    font-size: var(--text-sm);
+    -unity-font-style: bold;
+    -unity-text-align: middle-right;
+    color: var(--color-default);
+    flex-shrink: 0;
+}
+
+.pause-menu__buttons {
+    margin-top: var(--margin-xl);
+}

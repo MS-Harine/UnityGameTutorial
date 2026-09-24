@@ -1,0 +1,571 @@
+/* The Readme inspector. Colours come from the tokens in core.uss / core-light.uss. */
+
+.blocks-readme {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+/* The editor theme gives every Label its own padding, which shows up here as uneven word
+   gaps in linked sentences and a different left inset per text block. Zero it once;
+   everything below spaces itself with margins. */
+.blocks-readme Label {
+    padding: 0;
+}
+
+/* Match the Creator/wizard window button treatment. Kept local to the Readme and
+   intentionally duplicates the .blocks-wizard rules in wizard.uss so the two surfaces
+   stay independent. */
+.blocks-readme .unity-button {
+    border-radius: 6px;
+    transition-timing-function: ease-out;
+}
+
+.blocks-readme .blocks-button--primary {
+    background-color: var(--color-accent);
+    color: var(--color-accent-on);
+    border-color: var(--color-accent);
+    transition-property: background-color, border-color;
+    transition-duration: 90ms;
+}
+
+.blocks-readme .blocks-button--primary:hover {
+    background-color: var(--color-accent-bright);
+    color: var(--color-accent-on);
+    border-color: var(--color-accent-bright);
+}
+
+.blocks-readme .blocks-button--primary:active {
+    background-color: var(--color-accent);
+}
+
+/* ---------------------------------------------------------------- hero */
+
+.blocks-readme__hero {
+    flex-direction: row;
+    align-items: center;
+    padding-top: 6px;
+    padding-bottom: 14px;
+    margin-bottom: 12px;
+    border-bottom-width: 1px;
+    border-bottom-color: var(--color-accent-border);
+}
+
+.blocks-readme__icon {
+    width: 56px;
+    height: 56px;
+    margin-right: 14px;
+    border-radius: 10px;
+    background-color: var(--color-well-background);
+    -unity-background-scale-mode: scale-to-fit;
+    flex-shrink: 0;
+}
+
+.blocks-readme__hero-text {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.blocks-readme__title {
+    font-size: 18px;
+    -unity-font-style: bold;
+    color: var(--color-foreground-strong);
+    white-space: normal;
+}
+
+.blocks-readme__tagline {
+    font-size: 12px;
+    color: var(--color-foreground-muted);
+    margin-top: 3px;
+    white-space: normal;
+}
+
+/* ------------------------------------------------------------- sections */
+
+.blocks-readme__section {
+    background-color: var(--color-card-background);
+    border-width: 1px;
+    border-color: var(--color-border);
+    border-radius: 8px;
+    padding: 13px 15px;
+    margin-bottom: 10px;
+}
+
+/* Sits above the numbered steps, so it reads as page furniture rather than a fifth step. */
+.blocks-readme__section--intro {
+    background-color: var(--color-nested-background);
+    border-color: var(--color-divider);
+}
+
+.blocks-readme__section--intro .blocks-readme__body {
+    margin-top: 0;
+}
+
+/* A completed step folds down to one quiet line. */
+.blocks-readme__section--done {
+    background-color: var(--color-nested-background);
+    padding: 9px 13px;
+    opacity: 0.62;
+}
+
+.blocks-readme__heading {
+    font-size: 14px;
+    -unity-font-style: bold;
+    color: var(--color-foreground-strong);
+    white-space: normal;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.blocks-readme__body {
+    font-size: 13px;
+    color: var(--color-foreground-secondary);
+    white-space: normal;
+    margin-top: 10px;
+}
+
+/* --------------------------------------------------------- numbered step */
+
+.blocks-readme__stephead {
+    flex-direction: row;
+    align-items: center;
+}
+
+.blocks-readme__stepnum {
+    width: 21px;
+    height: 21px;
+    margin-right: 9px;
+    border-radius: 11px;
+    background-color: var(--color-accent);
+    color: var(--color-accent-on);
+    font-size: 11px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    flex-shrink: 0;
+}
+
+.blocks-readme__stepnum--done {
+    background-color: var(--color-success);
+}
+
+.blocks-readme__donebar {
+    flex-direction: row;
+    align-items: center;
+}
+
+.blocks-readme__donelabel {
+    flex-grow: 1;
+    flex-shrink: 1;
+    font-size: 13px;
+    color: var(--color-foreground-secondary);
+    white-space: normal;
+}
+
+.blocks-readme__undo {
+    background-color: var(--color-transparent);
+    border-width: 0;
+    color: var(--color-foreground-dim);
+    font-size: 11px;
+    padding: 2px 4px;
+    margin: 0;
+}
+
+.blocks-readme__undo:hover {
+    background-color: var(--color-transparent);
+    color: var(--color-foreground-strong);
+}
+
+/* ---------------------------------------------------------------- progress */
+
+.blocks-readme__progress {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top-width: 1px;
+    border-top-color: var(--color-divider);
+}
+
+.blocks-readme__progress-count {
+    font-size: 11px;
+    color: var(--color-foreground-dim);
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.blocks-readme__progress-track {
+    flex-grow: 1;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--color-inset-strong);
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.blocks-readme__progress-fill {
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--color-success);
+}
+
+.blocks-readme__toggle {
+    font-size: 11px;
+    color: var(--color-foreground-dim);
+    background-color: var(--color-transparent);
+    border-width: 1px;
+    border-color: var(--color-border-subtle);
+    padding: 2px 9px;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.blocks-readme__toggle:hover {
+    background-color: var(--color-surface);
+    color: var(--color-foreground-secondary);
+    border-color: var(--color-border-subtle-strong);
+}
+
+/* ----------------------------------------------------------------- buttons */
+
+.blocks-readme__btnrow {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.blocks-readme__cta {
+    padding-left: 14px;
+    padding-right: 14px;
+    margin: 2px 8px 2px 0;
+}
+
+.blocks-readme__ghost {
+    background-color: var(--color-transparent);
+    border-width: 1px;
+    border-color: var(--color-border-subtle);
+    color: var(--color-foreground-secondary);
+    padding: 3px 12px;
+    margin: 2px 8px 2px 0;
+}
+
+.blocks-readme__ghost:hover {
+    background-color: var(--color-surface);
+    color: var(--color-foreground-strong);
+    border-color: var(--color-border-subtle-strong);
+}
+
+/* Pushed to the right of whatever row it joins: it ends the step, it doesn't act on it. */
+.blocks-readme__done {
+    margin-left: auto;
+    background-color: var(--color-transparent);
+    border-width: 1px;
+    border-color: var(--color-success-border);
+    color: var(--color-success-text);
+    padding: 3px 12px;
+}
+
+.blocks-readme__done:hover {
+    background-color: var(--color-success-background);
+    color: var(--color-success-text);
+    border-color: var(--color-success);
+}
+
+/* ---------------------------------------------------------------- callout */
+
+.blocks-readme__callout {
+    margin-top: 10px;
+    padding: 9px 12px;
+    border-radius: 6px;
+    border-width: 1px;
+    background-color: var(--color-accent-background-soft);
+    border-color: var(--color-accent-border);
+}
+
+.blocks-readme__callout .blocks-readme__body {
+    margin-top: 0;
+    font-size: 12px;
+}
+
+.blocks-readme__callout--warn {
+    background-color: var(--color-warning-background);
+    border-color: var(--color-warning-border);
+}
+
+.blocks-readme__callout--warn .blocks-readme__body {
+    color: var(--color-warning-text);
+}
+
+/* -------------------------------------------------------------- copy row */
+
+.blocks-readme__copyrow {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+    padding: 5px 6px 5px 11px;
+    border-radius: 6px;
+    border-width: 1px;
+    background-color: var(--color-inset-strong);
+    border-color: var(--color-divider);
+}
+
+.blocks-readme__code {
+    flex-grow: 1;
+    flex-shrink: 1;
+    font-size: 12px;
+    color: var(--color-accent-text);
+    white-space: normal;
+}
+
+.blocks-readme__copybtn {
+    font-size: 11px;
+    padding: 2px 9px;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+/* ------------------------------------------------------------------ table */
+
+.blocks-readme__table {
+    margin-top: 12px;
+}
+
+.blocks-readme__table-head {
+    flex-direction: row;
+    padding-bottom: 5px;
+    border-bottom-width: 1px;
+    border-bottom-color: var(--color-divider);
+}
+
+.blocks-readme__th {
+    flex-grow: 1;
+    flex-basis: 0;
+    font-size: 11px;
+    -unity-font-style: bold;
+    color: var(--color-foreground-dim);
+    padding-right: 8px;
+}
+
+.blocks-readme__th--lead {
+    flex-grow: 0;
+    flex-basis: 88px;
+}
+
+.blocks-readme__table-row {
+    flex-direction: row;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-bottom-width: 1px;
+    border-bottom-color: var(--color-divider);
+}
+
+.blocks-readme__cell {
+    flex-grow: 1;
+    flex-basis: 0;
+    padding-right: 8px;
+}
+
+.blocks-readme__cell--lead {
+    flex-grow: 0;
+    flex-basis: 88px;
+}
+
+/* Only drawn once the table drops to its narrow layout, where the header row is gone. */
+.blocks-readme__cell-column {
+    display: none;
+    font-size: 10px;
+    -unity-font-style: bold;
+    color: var(--color-foreground-dim);
+    margin-bottom: 2px;
+}
+
+.blocks-readme__cell-text {
+    font-size: 12px;
+    -unity-font-style: bold;
+    color: var(--color-foreground-strong);
+    white-space: normal;
+}
+
+.blocks-readme__cell-link {
+    align-self: flex-start;
+    background-color: var(--color-transparent);
+    border-width: 0;
+    border-radius: 0;
+    color: var(--color-accent-text);
+    font-size: 11px;
+    -unity-text-align: middle-left;
+    padding: 0;
+    margin: 0 0 2px 0;
+    white-space: normal;
+}
+
+.blocks-readme__cell-link:hover {
+    background-color: var(--color-transparent);
+    color: var(--color-accent-bright);
+}
+
+.blocks-readme__cell-link--lead {
+    font-size: 12px;
+    -unity-font-style: bold;
+}
+
+.blocks-readme__cell-note {
+    font-size: 11px;
+    color: var(--color-foreground-muted);
+    white-space: normal;
+    margin-top: 0;
+}
+
+/* Narrow inspector: columns stack, and each cell names the column it came from. */
+.blocks-readme__table--narrow .blocks-readme__table-head {
+    display: none;
+}
+
+.blocks-readme__table--narrow .blocks-readme__table-row {
+    flex-direction: column;
+}
+
+.blocks-readme__table--narrow .blocks-readme__cell {
+    flex-basis: auto;
+    flex-grow: 0;
+    padding-right: 0;
+    margin-bottom: 8px;
+}
+
+.blocks-readme__table--narrow .blocks-readme__cell-column {
+    display: flex;
+}
+
+/* ------------------------------------------------------------------ terms */
+
+.blocks-readme__terms {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top-width: 1px;
+    border-top-color: var(--color-divider);
+}
+
+.blocks-readme__terms-head {
+    font-size: 11px;
+    -unity-font-style: bold;
+    color: var(--color-foreground-dim);
+    margin-bottom: 2px;
+    white-space: normal;
+}
+
+.blocks-readme__term {
+    font-size: 12px;
+    -unity-font-style: bold;
+    color: var(--color-foreground-strong);
+    margin-top: 8px;
+    white-space: normal;
+}
+
+/* A term that links somewhere. Order matters: this comes after __term so its colour wins. */
+.blocks-readme__term--link {
+    align-self: flex-start;
+    background-color: var(--color-transparent);
+    border-width: 0;
+    border-radius: 0;
+    color: var(--color-accent-text);
+    -unity-text-align: middle-left;
+    padding: 0;
+    margin: 8px 0 0 0;
+}
+
+.blocks-readme__term--link:hover {
+    background-color: var(--color-transparent);
+    color: var(--color-accent-bright);
+}
+
+.blocks-readme__def {
+    font-size: 12px;
+    color: var(--color-foreground-muted);
+    white-space: normal;
+    margin-top: 2px;
+}
+
+/* ------------------------------------------------------- collapsible card */
+
+.blocks-readme__collapsed {
+    flex-direction: row;
+    align-items: center;
+}
+
+.blocks-readme__caret {
+    width: 12px;
+    font-size: 9px;
+    color: var(--color-foreground-dim);
+    margin-right: 6px;
+    flex-shrink: 0;
+}
+
+.blocks-readme__section--open .blocks-readme__caret {
+    rotate: 90deg;
+}
+
+.blocks-readme__refbody {
+    display: none;
+}
+
+.blocks-readme__section--open .blocks-readme__refbody {
+    display: flex;
+}
+
+/* The first thing inside the open body separates itself; the terms block already does. */
+.blocks-readme__refbody .blocks-readme__terms {
+    margin-top: 12px;
+}
+
+/* ------------------------------------------------------------ inline links */
+
+/* A wrapping row of one label per word, because UI Toolkit exposes no public way to click
+   a rich-text <link> tag. Words inherit type from the body class on this row; the padding
+   reset at the top of this sheet is what keeps the word gaps even. */
+.blocks-readme__inline {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.blocks-readme__word {
+    margin: 0;
+}
+
+.blocks-readme__inline-link {
+    background-color: var(--color-transparent);
+    border-width: 0;
+    border-radius: 0;
+    color: var(--color-accent-text);
+    -unity-text-align: middle-left;
+    padding: 0;
+    margin: 0;
+}
+
+.blocks-readme__inline-link:hover {
+    background-color: var(--color-transparent);
+    color: var(--color-accent-bright);
+}
+
+.blocks-readme__inline-link:active {
+    background-color: var(--color-transparent);
+    color: var(--color-accent);
+}
+
+/* ----------------------------------------------------------------- footer */
+
+.blocks-readme__footer {
+    margin-top: 4px;
+    padding-top: 12px;
+    border-top-width: 1px;
+    border-top-color: var(--color-divider);
+    flex-direction: row;
+    align-items: center;
+}
+
+.blocks-readme__hint {
+    flex-grow: 1;
+    flex-shrink: 1;
+    color: var(--color-foreground-dim);
+    font-size: 11px;
+    white-space: normal;
+}

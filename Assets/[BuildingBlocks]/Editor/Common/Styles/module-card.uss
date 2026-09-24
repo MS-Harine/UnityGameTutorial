@@ -1,0 +1,88 @@
+.blocks-module-card {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border-radius: 6px;
+    border-width: 1px;
+    border-color: var(--color-border);
+    background-color: var(--color-card-background);
+    overflow: hidden;
+}
+
+/* Match the Creator/wizard window button treatment within the inspector. Scoped to
+   .blocks-inspector so it never reaches the Creator or Readme (both import this sheet),
+   and intentionally duplicates the .blocks-wizard rules in wizard.uss. */
+.blocks-inspector .unity-button {
+    border-radius: 6px;
+    transition-timing-function: ease-out;
+}
+
+.blocks-inspector .blocks-button--primary {
+    background-color: var(--color-accent);
+    color: var(--color-accent-on);
+    border-color: var(--color-accent);
+    transition-property: background-color, border-color;
+    transition-duration: 90ms;
+}
+
+.blocks-inspector .blocks-button--primary:hover {
+    background-color: var(--color-accent-bright);
+    color: var(--color-accent-on);
+    border-color: var(--color-accent-bright);
+}
+
+.blocks-inspector .blocks-button--primary:active {
+    background-color: var(--color-accent);
+}
+
+.blocks-module-card__header {
+    flex-direction: row;
+    align-items: center;
+    height: 36px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.blocks-module-card__title {
+    -unity-font-style: bold;
+    font-size: 13px;
+    margin-right: 12px;
+    color: var(--color-foreground);
+    transition-property: color;
+    transition-duration: 80ms;
+}
+
+.blocks-module-card__header:hover .blocks-module-card__title { color: var(--color-foreground-strong); }
+
+.blocks-module-card__summary {
+    flex-grow: 1;
+    color: var(--color-foreground-muted);
+    -unity-text-align: middle-left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.blocks-module-card__enable {
+    margin-right: 8px;
+    display: none;
+}
+
+.blocks-module-card__enable--shown { display: flex; }
+
+.blocks-module-card__chevron {
+    width: 14px;
+    -unity-text-align: middle-center;
+    color: var(--color-foreground-muted);
+    transition-property: color;
+    transition-duration: 80ms;
+}
+
+.blocks-module-card__header:hover .blocks-module-card__chevron { color: var(--color-foreground); }
+
+.blocks-module-card__body {
+    padding: 6px 12px 10px 12px;
+    border-top-width: 1px;
+    border-top-color: var(--color-divider);
+}
+
+.blocks-module-card--dimmed .blocks-module-card__title,
+.blocks-module-card--dimmed .blocks-module-card__summary { opacity: 0.45; }

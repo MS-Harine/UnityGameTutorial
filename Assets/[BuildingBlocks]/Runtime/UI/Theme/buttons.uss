@@ -1,0 +1,50 @@
+/* Outline pill that inverts to solid on hover and focus. */
+.blocks-button {
+    height: var(--base-unit-xl);
+    min-width: var(--width-min-input);
+    padding: 0 var(--padding-lg);
+    letter-spacing: var(--letterspacing-lg);
+    color: var(--color-default);
+    background-color: rgba(0, 0, 0, 0);
+    background-image: none;
+    border-color: var(--color-default);
+    border-width: var(--width-border-md);
+    border-radius: var(--radius-lg);
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    flex-grow: 0;
+}
+
+/* Compact variant of the same pill, for places with a menu button's worth of meaning but not its room
+   — the HUD's attack slots sit two-across under the stat bars. The min-width reset is the important
+   part: the full-size pill's 156px would blow any narrow column apart. */
+.blocks-button--sm {
+    /* Literals rather than tokens: the spacing scale steps 16 -> 32, and neither lands on a height
+       that reads as a pill at this text size. The radius is always half the height. */
+    height: 28px;
+    border-radius: 14px;
+    min-width: 0;
+    padding: 0 var(--padding-sm);
+    font-size: var(--text-sm);
+    /* The full-size pill's 4px is generous room this one doesn't have. */
+    letter-spacing: 0;
+}
+
+.blocks-button:hover:enabled,
+.blocks-button:focus:enabled {
+    background-color: var(--color-default);
+    border-color: var(--color-default);
+    color: var(--color-dark-content);
+}
+
+.blocks-button:active:enabled {
+    background-color: var(--color-active);
+    border-color: var(--color-active);
+    color: var(--color-dark-content);
+}
+
+.blocks-button:disabled {
+    color: var(--color-inactive);
+    border-color: var(--color-inactive);
+    background-color: rgba(0, 0, 0, 0);
+}

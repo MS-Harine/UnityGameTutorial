@@ -1,0 +1,15 @@
+.blocks-pill {
+    background-color: var(--color-surface-subtle);
+    color: var(--color-foreground-muted);
+    border-width: 1px;
+    border-color: var(--color-border-subtle);
+    padding: 3px 8px;
+    border-radius: 8px;
+    font-size: 10px;
+    margin-right: 6px;
+}
+
+.blocks-pill-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+}

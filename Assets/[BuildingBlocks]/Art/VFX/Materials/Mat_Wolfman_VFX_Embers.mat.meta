@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 776677ab3818fb249adaca05f4e04545
+timeCreated: 1471532950
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 190721
+  packageName: Dragon Crashers - URP 2D Sample Project
+  packageVersion: 1.61
+  assetPath: Assets/VFX/UnitAbilities/Wolfman/EarthShatter/Materials/Mat_Wolfman_VFX_Embers.mat
+  uploadId: 722358

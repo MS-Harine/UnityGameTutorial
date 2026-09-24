@@ -1,0 +1,23 @@
+.blocks-label {
+    color: var(--color-default);
+}
+
+.blocks-label--dim {
+    color: var(--color-neutral);
+}
+
+.blocks-header {
+    font-size: var(--text-lg);
+    -unity-font-style: bold;
+    color: var(--color-neutral);
+    -unity-text-align: middle-center;
+    width: 100%;
+}
+
+.blocks-header--sm {
+    font-size: var(--text-md);
+}
+
+.blocks-header--space-bottom {
+    margin-bottom: var(--margin-xl);
+}

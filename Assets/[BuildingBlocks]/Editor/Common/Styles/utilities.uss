@@ -1,0 +1,13 @@
+.blocks-text--dim  { color: var(--color-foreground-dim); }
+.blocks-text--warn { color: var(--color-warning-text); }
+
+.blocks-bullet {
+    width: 12px;
+    color: var(--color-foreground-muted);
+}
+
+.blocks-muted {
+    color: var(--color-foreground-dim);
+    font-size: 11px;
+    white-space: normal;
+}

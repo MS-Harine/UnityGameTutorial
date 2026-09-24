@@ -1,0 +1,1018 @@
+fileFormatVersion: 2
+guid: 5b16e178d74cc4de98db1addacdeec63
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7071247005233049183
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_0
+  - first:
+      213: -1053296147476882779
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_1
+  - first:
+      213: 2716477551629326641
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_2
+  - first:
+      213: -1904676434785161553
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_3
+  - first:
+      213: 375159014044529820
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_4
+  - first:
+      213: -5282491726156879690
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_5
+  - first:
+      213: -711085276149135884
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_6
+  - first:
+      213: -8065092658179001859
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_7
+  - first:
+      213: -5682675624790032193
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_8
+  - first:
+      213: -3437848675070787616
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_9
+  - first:
+      213: -7955128143137536304
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_10
+  - first:
+      213: -6757437216923521067
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_11
+  - first:
+      213: 5778002100998986247
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_12
+  - first:
+      213: -815272205751055823
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_13
+  - first:
+      213: -1523603418992848251
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_14
+  - first:
+      213: 2377010218521268935
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_15
+  - first:
+      213: -7597120281093894512
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_16
+  - first:
+      213: -5568089337627988054
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_17
+  - first:
+      213: -3956106300912784495
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_18
+  - first:
+      213: 8719067564695477951
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_19
+  - first:
+      213: -6869286940278263722
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_20
+  - first:
+      213: -1720699177396209852
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_21
+  - first:
+      213: -6483485844247050572
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_22
+  - first:
+      213: -2662940747828321939
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_23
+  - first:
+      213: 5068848619902503626
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_24
+  - first:
+      213: 5288905241119943970
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_25
+  - first:
+      213: 1954037728237806875
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_26
+  - first:
+      213: -7902933792732319224
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_27
+  - first:
+      213: -8315645070460370118
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_28
+  - first:
+      213: 7694558400739392513
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_29
+  - first:
+      213: 6918153900448843851
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_30
+  - first:
+      213: 2438602891459516621
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_31
+  - first:
+      213: 6315600338725120850
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_32
+  - first:
+      213: 6938883222831094994
+    second: Skeleton_A_Anim_Character_Wolfman_Idle_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 5318
+        width: 428
+        height: 548
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a11a065052eddd90800000000000000
+      internalID: -7071247005233049183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 5318
+        width: 434
+        height: 554
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aa5a560cb0f161f0800000000000000
+      internalID: -1053296147476882779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 2273
+        y: 5318
+        width: 437
+        height: 560
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1395031d0fdd2b520800000000000000
+      internalID: 2716477551629326641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 3296
+        y: 5315
+        width: 446
+        height: 569
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faea29cbfda3195e0800000000000000
+      internalID: -1904676434785161553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 4319
+        y: 5315
+        width: 452
+        height: 578
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c94f866b225d43500800000000000000
+      internalID: 375159014044529820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 5342
+        y: 5312
+        width: 455
+        height: 587
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b8aa7d43c1d0b6b0800000000000000
+      internalID: -5282491726156879690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 4289
+        width: 452
+        height: 590
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f5ce1675b7b126f0800000000000000
+      internalID: -711085276149135884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 4289
+        width: 443
+        height: 596
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df131a445f8031090800000000000000
+      internalID: -8065092658179001859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_8
+      rect:
+        serializedVersion: 2
+        x: 2279
+        y: 4289
+        width: 431
+        height: 596
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb08e9a90a41321b0800000000000000
+      internalID: -5682675624790032193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_9
+      rect:
+        serializedVersion: 2
+        x: 3308
+        y: 4289
+        width: 416
+        height: 596
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0efbbd238de4a40d0800000000000000
+      internalID: -3437848675070787616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_10
+      rect:
+        serializedVersion: 2
+        x: 4334
+        y: 4289
+        width: 413
+        height: 593
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d603951a15b99190800000000000000
+      internalID: -7955128143137536304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_11
+      rect:
+        serializedVersion: 2
+        x: 5360
+        y: 4289
+        width: 410
+        height: 590
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dfe44557a2c832a0800000000000000
+      internalID: -6757437216923521067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_12
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 3266
+        width: 413
+        height: 584
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70a51853c469f2050800000000000000
+      internalID: 5778002100998986247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_13
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 3266
+        width: 416
+        height: 575
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13a85f49f329fa4f0800000000000000
+      internalID: -815272205751055823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_14
+      rect:
+        serializedVersion: 2
+        x: 2288
+        y: 3266
+        width: 419
+        height: 569
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5825c5843c21bdae0800000000000000
+      internalID: -1523603418992848251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_15
+      rect:
+        serializedVersion: 2
+        x: 3308
+        y: 3269
+        width: 425
+        height: 557
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c21f662336dcf020800000000000000
+      internalID: 2377010218521268935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_16
+      rect:
+        serializedVersion: 2
+        x: 4331
+        y: 3269
+        width: 428
+        height: 551
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09e8b790b5b919690800000000000000
+      internalID: -7597120281093894512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_17
+      rect:
+        serializedVersion: 2
+        x: 5351
+        y: 3269
+        width: 431
+        height: 551
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaf2b099f3c2ab2b0800000000000000
+      internalID: -5568089337627988054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_18
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 2243
+        width: 434
+        height: 554
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19ba86897461919c0800000000000000
+      internalID: -3956106300912784495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_19
+      rect:
+        serializedVersion: 2
+        x: 1250
+        y: 2243
+        width: 440
+        height: 557
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbedd4621c9500970800000000000000
+      internalID: 8719067564695477951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_20
+      rect:
+        serializedVersion: 2
+        x: 2273
+        y: 2243
+        width: 446
+        height: 563
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 650fb704ce36ba0a0800000000000000
+      internalID: -6869286940278263722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_21
+      rect:
+        serializedVersion: 2
+        x: 3296
+        y: 2243
+        width: 452
+        height: 569
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 447fdfdf639de18e0800000000000000
+      internalID: -1720699177396209852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_22
+      rect:
+        serializedVersion: 2
+        x: 4319
+        y: 2243
+        width: 452
+        height: 575
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b68163c9f70606a0800000000000000
+      internalID: -6483485844247050572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_23
+      rect:
+        serializedVersion: 2
+        x: 5345
+        y: 2243
+        width: 446
+        height: 581
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d61a7cbaf755b0bd0800000000000000
+      internalID: -2662940747828321939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_24
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 1220
+        width: 440
+        height: 584
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aca8481c6fa285640800000000000000
+      internalID: 5068848619902503626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_25
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 1220
+        width: 434
+        height: 584
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22de7a38b47f56940800000000000000
+      internalID: 5288905241119943970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_26
+      rect:
+        serializedVersion: 2
+        x: 2282
+        y: 1220
+        width: 422
+        height: 584
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b15635df5f22e1b10800000000000000
+      internalID: 1954037728237806875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_27
+      rect:
+        serializedVersion: 2
+        x: 3308
+        y: 1220
+        width: 419
+        height: 584
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80272c84693235290800000000000000
+      internalID: -7902933792732319224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_28
+      rect:
+        serializedVersion: 2
+        x: 4334
+        y: 1220
+        width: 419
+        height: 581
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a334bf8ddd4e89c80800000000000000
+      internalID: -8315645070460370118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_29
+      rect:
+        serializedVersion: 2
+        x: 5360
+        y: 1220
+        width: 419
+        height: 578
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10cb193191098ca60800000000000000
+      internalID: 7694558400739392513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_30
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 197
+        width: 416
+        height: 572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b488cb98158320060800000000000000
+      internalID: 6918153900448843851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_31
+      rect:
+        serializedVersion: 2
+        x: 1268
+        y: 197
+        width: 416
+        height: 566
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc85fa5d868a7d120800000000000000
+      internalID: 2438602891459516621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_32
+      rect:
+        serializedVersion: 2
+        x: 2291
+        y: 197
+        width: 419
+        height: 560
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25b2c0deb0585a750800000000000000
+      internalID: 6315600338725120850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Wolfman_Idle_33
+      rect:
+        serializedVersion: 2
+        x: 3314
+        y: 197
+        width: 421
+        height: 554
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dcd3c2078ddb4060800000000000000
+      internalID: 6938883222831094994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 92df47d8aa7d84dbaa8bde8e5b250a58
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: 10b43dba769d24e3bae7486a73c6fdd1, type: 3}
+      name: _NormalMap
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Skeleton_A_Anim_Character_Wolfman_Idle_0: -7071247005233049183
+      Skeleton_A_Anim_Character_Wolfman_Idle_1: -1053296147476882779
+      Skeleton_A_Anim_Character_Wolfman_Idle_10: -7955128143137536304
+      Skeleton_A_Anim_Character_Wolfman_Idle_11: -6757437216923521067
+      Skeleton_A_Anim_Character_Wolfman_Idle_12: 5778002100998986247
+      Skeleton_A_Anim_Character_Wolfman_Idle_13: -815272205751055823
+      Skeleton_A_Anim_Character_Wolfman_Idle_14: -1523603418992848251
+      Skeleton_A_Anim_Character_Wolfman_Idle_15: 2377010218521268935
+      Skeleton_A_Anim_Character_Wolfman_Idle_16: -7597120281093894512
+      Skeleton_A_Anim_Character_Wolfman_Idle_17: -5568089337627988054
+      Skeleton_A_Anim_Character_Wolfman_Idle_18: -3956106300912784495
+      Skeleton_A_Anim_Character_Wolfman_Idle_19: 8719067564695477951
+      Skeleton_A_Anim_Character_Wolfman_Idle_2: 2716477551629326641
+      Skeleton_A_Anim_Character_Wolfman_Idle_20: -6869286940278263722
+      Skeleton_A_Anim_Character_Wolfman_Idle_21: -1720699177396209852
+      Skeleton_A_Anim_Character_Wolfman_Idle_22: -6483485844247050572
+      Skeleton_A_Anim_Character_Wolfman_Idle_23: -2662940747828321939
+      Skeleton_A_Anim_Character_Wolfman_Idle_24: 5068848619902503626
+      Skeleton_A_Anim_Character_Wolfman_Idle_25: 5288905241119943970
+      Skeleton_A_Anim_Character_Wolfman_Idle_26: 1954037728237806875
+      Skeleton_A_Anim_Character_Wolfman_Idle_27: -7902933792732319224
+      Skeleton_A_Anim_Character_Wolfman_Idle_28: -8315645070460370118
+      Skeleton_A_Anim_Character_Wolfman_Idle_29: 7694558400739392513
+      Skeleton_A_Anim_Character_Wolfman_Idle_3: -1904676434785161553
+      Skeleton_A_Anim_Character_Wolfman_Idle_30: 6918153900448843851
+      Skeleton_A_Anim_Character_Wolfman_Idle_31: 2438602891459516621
+      Skeleton_A_Anim_Character_Wolfman_Idle_32: 6315600338725120850
+      Skeleton_A_Anim_Character_Wolfman_Idle_33: 6938883222831094994
+      Skeleton_A_Anim_Character_Wolfman_Idle_4: 375159014044529820
+      Skeleton_A_Anim_Character_Wolfman_Idle_5: -5282491726156879690
+      Skeleton_A_Anim_Character_Wolfman_Idle_6: -711085276149135884
+      Skeleton_A_Anim_Character_Wolfman_Idle_7: -8065092658179001859
+      Skeleton_A_Anim_Character_Wolfman_Idle_8: -5682675624790032193
+      Skeleton_A_Anim_Character_Wolfman_Idle_9: -3437848675070787616
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

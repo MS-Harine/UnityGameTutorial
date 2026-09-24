@@ -1,0 +1,77 @@
+/* Styles Unity's ProgressBar control, so the sub-element names below are the ones the control
+   builds for itself. Add blocks-progress-bar to a ProgressBar to pick this up.
+
+   The fill colour is set per bar in code (StatBarStack tints it from the stat's own colour), so
+   --color-progressbar-fill is only the fallback for a bar nothing tinted. */
+:root {
+    --color-progressbar-background: rgba(16, 16, 16, 0.75);
+    --color-progressbar-fill: rgba(145, 213, 97, 0.75);
+    --height-progressbar: 16px;
+    --height-progressbar-world: 10px;
+    --radius-progressbar: 10px;
+    --radius-progressbar-world: 5px;
+}
+
+.blocks-progress-bar {
+    width: 100%;
+}
+
+.blocks-progress-bar .unity-progress-bar {
+    position: relative;
+    width: 100%;
+    min-height: var(--height-progressbar);
+    max-height: var(--height-progressbar);
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: var(--radius-progressbar);
+    overflow: hidden;
+    justify-content: center;
+}
+
+.blocks-progress-bar .unity-progress-bar__container {
+    justify-content: center;
+}
+
+.blocks-progress-bar .unity-progress-bar__background {
+    position: absolute;
+    width: 100%;
+    min-height: var(--height-progressbar);
+    max-height: var(--height-progressbar);
+    background-color: var(--color-progressbar-background);
+    border-radius: var(--radius-progressbar);
+    overflow: hidden;
+    border-width: 0;
+}
+
+/* Stretched top to bottom rather than given a height. The original had an 8px fill pinned to the
+   top of a 16px track, which left the bottom half of every bar permanently empty. */
+.blocks-progress-bar .unity-progress-bar__progress {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    border-radius: var(--radius-progressbar);
+    background-color: var(--color-progressbar-fill);
+    transition-property: width;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+/* The control puts a text label over the bar; these bars are read by colour and length. */
+.blocks-progress-bar .unity-progress-bar__title-container,
+.blocks-progress-bar .unity-progress-bar__title {
+    display: none;
+}
+
+/* Slimmer variant for the bars floating over enemies in world space. */
+.blocks-progress-bar--world .unity-progress-bar,
+.blocks-progress-bar--world .unity-progress-bar__background {
+    min-height: var(--height-progressbar-world);
+    max-height: var(--height-progressbar-world);
+    border-radius: var(--radius-progressbar-world);
+}
+
+.blocks-progress-bar--world .unity-progress-bar__progress {
+    border-radius: var(--radius-progressbar-world);
+}

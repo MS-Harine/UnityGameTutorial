@@ -1,0 +1,29 @@
+{
+    "name": "Blocks.Cli.Commands.Editor",
+    "rootNamespace": "Blocks.Cli",
+    "references": [
+        "Blocks.Runtime",
+        "Blocks.Editor",
+        "Blocks.Cli.Editor",
+        "Unity.Pipeline"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "BLOCKS_UNITY_CLI"
+    ],
+    "versionDefines": [
+        {
+            "name": "com.unity.pipeline",
+            "expression": "",
+            "define": "BLOCKS_UNITY_CLI"
+        }
+    ],
+    "noEngineReferences": false
+}

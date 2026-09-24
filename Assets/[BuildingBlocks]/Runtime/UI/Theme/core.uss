@@ -1,0 +1,73 @@
+/* Design tokens, shared by every UIDocument in the project through BlocksRuntimeTheme.tss.
+   Change a value here and the whole UI follows.
+
+   Ported from the Blocks design system in the GameplayNGO StarterKits project, so a stylesheet
+   written against that system drops straight in here. Only the parts this template uses were
+   brought over — paste any other file from there next to this one and add an @import to the theme.
+
+   The original also carried `-unity-font: var(--font-sans)` with --font-sans: "Inter", sans-serif.
+   That is inert: USS -unity-font takes a url(), not a family name, so it silently did nothing and
+   the UI rendered in the default UITK font. It is left out rather than copied. To put a real font
+   on everything, point -unity-font at a .ttf and clear -unity-font-definition, which the default
+   theme sets and which otherwise wins. */
+:root {
+    /* text */
+    --text-xs: 12px;
+    --text-sm: 14px;
+    --text-md: 18px;
+    --text-lg: 24px;
+    --text-xl: 32px;
+    --text-display: 96px;
+    --letterspacing-md: 2px;
+    --letterspacing-lg: 4px;
+
+    /* colors */
+    --color-modal-background: rgba(16, 16, 16, 0.96);
+    --color-overlay-background: rgba(0, 0, 0, 0.8);
+    --color-panel-background: rgba(22, 22, 24, 0.9);
+
+    --color-default: rgb(255, 255, 255);
+    --color-inactive: rgba(255, 255, 255, 0.5);
+    --color-neutral: rgb(171, 171, 171);
+    --color-active: rgb(199, 199, 199);
+    --color-dark-content: rgb(0, 0, 0);
+    --color-border: rgb(66, 66, 66);
+
+    /* spacing and sizing */
+    --base-unit-xs: 4px;
+    --base-unit-sm: 8px;
+    --base-unit-md: 16px;
+    --base-unit-lg: 32px;
+    --base-unit-xl: 56px;
+
+    /* paddings */
+    --padding-sm: 8px;
+    --padding-md: 18px;
+    --padding-lg: 32px;
+    --padding-xl: 48px;
+
+    /* margins */
+    --margin-xs: 4px;
+    --margin-sm: 16px;
+    --margin-md: 24px;
+    --margin-lg: 32px;
+    --margin-xl: 48px;
+
+    /* border radius */
+    --radius-xs: 4px;
+    --radius-sm: 16px;
+    --radius-md: 24px;
+    --radius-lg: 28px;
+
+    --width-min-input: 156px;
+    --width-border-md: 2px;
+}
+
+/* Zeroing margins and padding everywhere means a rule only ever adds spacing on purpose, rather
+   than fighting whatever the default theme put there. */
+* {
+    margin: 0;
+    padding: 0;
+    font-size: var(--text-md);
+    letter-spacing: var(--letterspacing-md);
+}

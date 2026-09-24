@@ -1,0 +1,23 @@
+.blocks-stat-bar {
+    flex-grow: 1;
+    height: 18px;
+    margin-left: 6px;
+    background-color: var(--color-deep-background);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.blocks-stat-bar__fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.blocks-stat-bar__label {
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    -unity-text-align: middle-center;
+    color: var(--color-foreground-strong);
+    font-size: 11px;
+}

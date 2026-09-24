@@ -1,0 +1,27 @@
+/* Stat bar layout, shared by the player and enemy HUDs. The bars themselves are Unity ProgressBars
+   styled by the theme's blocks-progress-bar (Runtime/UI/Theme/progressbar.uss); this file only says
+   where a stack sits and how tightly its bars are packed. */
+
+.stat-bar-stack {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* Sits at the top of the player corner's right-hand column, above the attack slots — so it takes its
+   width from that column and its height from its own bars. */
+.stat-bar-stack--corner {
+    width: 100%;
+}
+
+.stat-bar-stack--corner .blocks-progress-bar {
+    margin-bottom: var(--base-unit-xs);
+}
+
+.stat-bar-stack--world {
+    width: 100%;
+    height: 100%;
+}
+
+.stat-bar-stack--world .blocks-progress-bar {
+    margin-bottom: 2px;
+}

@@ -1,0 +1,394 @@
+fileFormatVersion: 2
+guid: e2314ff5706314268ad9f2f62061cda7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5498694531135328844
+    second: Skeleton_A_Anim_Character_Bipedal_Run_0
+  - first:
+      213: -8405444834334906701
+    second: Skeleton_A_Anim_Character_Bipedal_Run_1
+  - first:
+      213: 3564756849595322410
+    second: Skeleton_A_Anim_Character_Bipedal_Run_2
+  - first:
+      213: -2253908110357172441
+    second: Skeleton_A_Anim_Character_Bipedal_Run_3
+  - first:
+      213: 3991463570722651099
+    second: Skeleton_A_Anim_Character_Bipedal_Run_4
+  - first:
+      213: 7810868073528864334
+    second: Skeleton_A_Anim_Character_Bipedal_Run_5
+  - first:
+      213: 2271226573402379633
+    second: Skeleton_A_Anim_Character_Bipedal_Run_6
+  - first:
+      213: 1554226379993775237
+    second: Skeleton_A_Anim_Character_Bipedal_Run_7
+  - first:
+      213: -6540015477351327525
+    second: Skeleton_A_Anim_Character_Bipedal_Run_8
+  - first:
+      213: -3849495908699863097
+    second: Skeleton_A_Anim_Character_Bipedal_Run_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Run_0
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 3273
+        width: 428
+        height: 576
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bdab4f0576b0b3b0800000000000000
+      internalID: -5498694531135328844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Run_1
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 3283
+        width: 458
+        height: 590
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b66356057cd95b80800000000000000
+      internalID: -8405444834334906701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Run_2
+      rect:
+        serializedVersion: 2
+        x: 2229
+        y: 3355
+        width: 516
+        height: 550
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2015c2c77f887130800000000000000
+      internalID: 3564756849595322410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Run_3
+      rect:
+        serializedVersion: 2
+        x: 3259
+        y: 3321
+        width: 520
+        height: 580
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72fe9cde38288b0e0800000000000000
+      internalID: -2253908110357172441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Run_4
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 2251
+        width: 420
+        height: 572
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdbf5da48f6846730800000000000000
+      internalID: 3991463570722651099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Run_5
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 2249
+        width: 366
+        height: 536
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4ea02e0127c56c60800000000000000
+      internalID: 7810868073528864334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Run_6
+      rect:
+        serializedVersion: 2
+        x: 2341
+        y: 2249
+        width: 356
+        height: 574
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1759318f884058f10800000000000000
+      internalID: 2271226573402379633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Run_7
+      rect:
+        serializedVersion: 2
+        x: 3325
+        y: 2313
+        width: 430
+        height: 564
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58cf11078a8b19510800000000000000
+      internalID: 1554226379993775237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Run_8
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 1299
+        width: 506
+        height: 552
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd8dae6e2923d35a0800000000000000
+      internalID: -6540015477351327525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skeleton_A_Anim_Character_Bipedal_Run_9
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 1223
+        width: 404
+        height: 592
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c700a5ddd7d39ac0800000000000000
+      internalID: -3849495908699863097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ac8af83db545945309459ec39345cccc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures:
+    - texture: {fileID: 2800000, guid: e9a1b154349b34616ab7f4b432c33df0, type: 3}
+      name: _NormalMap
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Skeleton_A_Anim_Character_Bipedal_Run_0: -5498694531135328844
+      Skeleton_A_Anim_Character_Bipedal_Run_1: -8405444834334906701
+      Skeleton_A_Anim_Character_Bipedal_Run_2: 3564756849595322410
+      Skeleton_A_Anim_Character_Bipedal_Run_3: -2253908110357172441
+      Skeleton_A_Anim_Character_Bipedal_Run_4: 3991463570722651099
+      Skeleton_A_Anim_Character_Bipedal_Run_5: 7810868073528864334
+      Skeleton_A_Anim_Character_Bipedal_Run_6: 2271226573402379633
+      Skeleton_A_Anim_Character_Bipedal_Run_7: 1554226379993775237
+      Skeleton_A_Anim_Character_Bipedal_Run_8: -6540015477351327525
+      Skeleton_A_Anim_Character_Bipedal_Run_9: -3849495908699863097
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

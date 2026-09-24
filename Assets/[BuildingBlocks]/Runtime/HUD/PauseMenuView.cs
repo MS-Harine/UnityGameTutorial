@@ -1,4 +1,6 @@
 using System;
+using Blocks.Network;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace Blocks.HUD
@@ -17,6 +19,13 @@ namespace Blocks.HUD
         const string k_ColumnsName = "pause-menu-columns";
         const string k_ResumeName = "resume-button";
         const string k_QuitName = "quit-button";
+        const string k_IpInputName = "ip-input";
+        const string k_PortInputName = "port-input";
+        const string k_ConnectButtonName = "connect-button";
+        const string k_StatusLabelName = "connection-status";
+
+        const string k_StatusDisconnectedClass = "server-connection__status--disconnected";
+        const string k_StatusConnectedClass = "server-connection__status--connected";
 
         const string k_SectionClass = "pause-menu__section";
         const string k_HeaderClass = "pause-menu__header";
@@ -33,14 +42,26 @@ namespace Blocks.HUD
         readonly VisualElement m_Columns;
         readonly Button m_Resume;
         readonly Button m_Quit;
+        readonly TextField m_IpInput;
+        readonly TextField m_PortInput;
+        readonly Button m_ConnectButton;
+        readonly Label m_StatusLabel;
 
         bool m_Bound;
+        bool m_IsConnected;
 
         /// <summary>Raised when Resume is pressed.</summary>
         public event Action ResumeRequested;
 
         /// <summary>Raised when Quit is pressed.</summary>
         public event Action QuitRequested;
+
+        /// <summary>Raised when Connect is pressed. Passes IP and Port.</summary>
+        public event Action<string, string> ConnectRequested;
+
+        public string IpAddress => m_IpInput?.value ?? string.Empty;
+        public string Port => m_PortInput?.value ?? string.Empty;
+        public bool IsConnected => m_IsConnected;
 
         /// <summary>False when the menu markup isn't in the document, in which case this does nothing.</summary>
         public bool IsValid => m_Root != null;
@@ -53,6 +74,26 @@ namespace Blocks.HUD
             m_Columns = m_Root.Q<VisualElement>(k_ColumnsName);
             m_Resume = m_Root.Q<Button>(k_ResumeName);
             m_Quit = m_Root.Q<Button>(k_QuitName);
+            m_IpInput = m_Root.Q<TextField>(k_IpInputName);
+            m_PortInput = m_Root.Q<TextField>(k_PortInputName);
+            m_ConnectButton = m_Root.Q<Button>(k_ConnectButtonName);
+            m_StatusLabel = m_Root.Q<Label>(k_StatusLabelName);
+
+            NetworkManager.Instance.OnNetworkStateChanged += (state, message) =>
+            {
+                if (state == NetworkState.Connected)
+                {
+                    SetConnectionStatus(true, message);
+                }
+                else if (state == NetworkState.Connecting)
+                {
+                    SetConnectionStatus(false, "Connecting...");
+                }
+                else if (state == NetworkState.Disconnected)
+                {
+                    SetConnectionStatus(false, message);
+                }
+            };
         }
 
         /// <summary>Fills the columns from <paramref name="sections"/>. Safe to call again after a rebind.</summary>
@@ -77,6 +118,7 @@ namespace Blocks.HUD
 
             if (m_Resume != null) m_Resume.clicked += HandleResumeClicked;
             if (m_Quit != null) m_Quit.clicked += HandleQuitClicked;
+            if (m_ConnectButton != null) m_ConnectButton.clicked += HandleConnectClicked;
         }
 
         public void Unbind()
@@ -86,6 +128,7 @@ namespace Blocks.HUD
 
             if (m_Resume != null) m_Resume.clicked -= HandleResumeClicked;
             if (m_Quit != null) m_Quit.clicked -= HandleQuitClicked;
+            if (m_ConnectButton != null) m_ConnectButton.clicked -= HandleConnectClicked;
         }
 
         /// <summary>
@@ -172,5 +215,30 @@ namespace Blocks.HUD
         void HandleResumeClicked() => ResumeRequested?.Invoke();
 
         void HandleQuitClicked() => QuitRequested?.Invoke();
+
+        void HandleConnectClicked() => ConnectRequested?.Invoke(IpAddress, Port);
+
+        /// <summary>
+        /// Updates the connection status UI. Only controls display state; performs no network logic.
+        /// </summary>
+        public void SetConnectionStatus(bool isConnected, string statusText = null)
+        {
+            m_IsConnected = isConnected;
+            if (m_StatusLabel == null) return;
+
+            m_StatusLabel.RemoveFromClassList(k_StatusDisconnectedClass);
+            m_StatusLabel.RemoveFromClassList(k_StatusConnectedClass);
+
+            if (isConnected)
+            {
+                m_StatusLabel.text = (statusText ?? "Status: Connected").Trim();
+                m_StatusLabel.AddToClassList(k_StatusConnectedClass);
+            }
+            else
+            {
+                m_StatusLabel.text = (statusText ?? "Status: Disconnected").Trim();
+                m_StatusLabel.AddToClassList(k_StatusDisconnectedClass);
+            }
+        }
     }
 }

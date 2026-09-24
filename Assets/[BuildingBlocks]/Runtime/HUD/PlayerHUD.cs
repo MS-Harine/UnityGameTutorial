@@ -5,6 +5,8 @@ using Blocks.GameFeel;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using Blocks.Network;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -197,6 +199,11 @@ namespace Blocks.HUD
 #endif
         }
 
+        public void ConnectToServer(string ip, string port)
+        {
+            NetworkManager.Instance.Connect(ip, int.Parse(port));
+        }
+
         void BuildUi()
         {
             if (m_UIDocument == null) return;
@@ -213,6 +220,7 @@ namespace Blocks.HUD
                 m_Menu.Bind();
                 m_Menu.ResumeRequested += HandleResumeRequested;
                 m_Menu.QuitRequested += Quit;
+                m_Menu.ConnectRequested += ConnectToServer;
                 m_Menu.SetOpacity(m_MenuOpacity);
             }
             else

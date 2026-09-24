@@ -7,6 +7,26 @@
         <ui:VisualElement name="pause-menu-card" class="blocks-modal pause-menu__card">
             <ui:Label text="PAUSED" class="blocks-header blocks-header--space-bottom"/>
             <ui:VisualElement name="pause-menu-columns" picking-mode="Ignore" class="pause-menu__columns"/>
+            <ui:VisualElement name="server-connection-section" class="server-connection">
+                <ui:Label text="Server Connection" class="blocks-header blocks-header--sm server-connection__header"/>
+                <ui:VisualElement class="server-connection__inputs">
+                    <ui:VisualElement class="server-connection__field">
+                        <ui:Label text="Ip Address" class="server-connection__label"/>
+                        <ui:TextField name="ip-input" value="127.0.0.1" class="server-connection__text-field"/>
+                    </ui:VisualElement>
+
+                    <ui:VisualElement class="server-connection__field server-connection__field--port">
+                        <ui:Label text="Port" class="server-connection__label"/>
+                        <ui:TextField name="port-input" value="7777" class="server-connection__text-field"/>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+
+                <ui:VisualElement class="server-connection__actions">
+                    <ui:Button name="connect-button" text="CONNECT" class="blocks-button blocks-button--sm server-connection__connect-button"/>
+                </ui:VisualElement>
+
+                <ui:Label name="connection-status" text="Status: Disconnected" class="server-connection__status server-connection__status--disconnected"/>
+            </ui:VisualElement>
             <ui:VisualElement name="pause-menu-buttons" class="blocks-container--horizontal pause-menu__buttons">
                 <ui:Button name="resume-button" text="RESUME" class="blocks-button blocks-element--space-right"/>
                 <ui:Button name="quit-button" text="QUIT" class="blocks-button"/>

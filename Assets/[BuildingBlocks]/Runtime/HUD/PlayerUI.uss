@@ -313,8 +313,7 @@
 }
 
 .pause-menu__card {
-    min-width: 560px;
-    max-width: 720px;
+    width: 640px;
 }
 
 .pause-menu__columns {
@@ -364,5 +363,104 @@
 }
 
 .pause-menu__buttons {
-    margin-top: var(--margin-xl);
+    margin-top: var(--margin-md);
 }
+
+/* ---------------------------------------------------------------------------------------------
+   Server connection — IP/Port inputs, Connect button and Status
+   --------------------------------------------------------------------------------------------- */
+.server-connection {
+    width: 100%;
+    margin-top: var(--margin-sm);
+    padding: var(--padding-sm) var(--padding-md);
+    background-color: rgba(255, 255, 255, 0.04);
+    border-radius: var(--radius-sm);
+    border-width: 1px;
+    border-color: var(--color-border);
+    align-items: center;
+}
+
+.server-connection__header {
+    margin-bottom: var(--base-unit-sm);
+    -unity-text-align: middle-center;
+}
+
+.server-connection__inputs {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--base-unit-sm);
+}
+
+.server-connection__field {
+    flex-direction: row;
+    align-items: center;
+}
+
+.server-connection__field--port {
+    margin-left: var(--margin-md);
+}
+
+.server-connection__label {
+    font-size: var(--text-sm);
+    color: var(--color-neutral);
+    margin-right: var(--base-unit-sm);
+    -unity-font-style: bold;
+}
+
+.server-connection__text-field {
+    width: 150px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.server-connection__field--port .server-connection__text-field {
+    width: 80px;
+}
+
+.server-connection__text-field > .unity-base-field__input {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-color: var(--color-border);
+    border-width: 1px;
+    border-radius: var(--radius-xs);
+    color: var(--color-default);
+    padding: 0 var(--padding-sm);
+    font-size: var(--text-sm);
+    -unity-text-align: middle-left;
+    height: 100%;
+}
+
+.server-connection__text-field > .unity-base-field__input:focus {
+    border-color: var(--color-default);
+}
+
+.server-connection__actions {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--base-unit-sm);
+}
+
+.server-connection__connect-button {
+    /* Centered in its row, no right margin needed */
+}
+
+.server-connection__status {
+    height: 24px;
+    font-size: var(--text-sm);
+    letter-spacing: 0;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    white-space: nowrap;
+}
+
+.server-connection__status--disconnected {
+    color: rgb(255, 99, 71);
+}
+
+.server-connection__status--connected {
+    color: rgb(76, 217, 100);
+}
+
+

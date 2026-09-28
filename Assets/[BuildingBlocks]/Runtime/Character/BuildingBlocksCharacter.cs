@@ -498,9 +498,19 @@ namespace Blocks.Character
             Destroy(gameObject);
         }
 
-        void Respawn()
+        public void Respawn()
         {
-            transform.SetPositionAndRotation(m_RespawnModule.StartPosition, m_RespawnModule.StartRotation);
+            RespawnAt(m_RespawnModule.StartPosition, m_RespawnModule.StartRotation);
+        }
+
+        public void Respawn(Vector3 position)
+        {
+            RespawnAt(position, transform.rotation);
+        }
+
+        void RespawnAt(Vector3 position, Quaternion rotation)
+        {
+            transform.SetPositionAndRotation(position, rotation);
 
             // All three are needed, and none replaces another. StopRigidbodyMotion zeroes the bodies,
             // children included; the movement model composes velocity additively and writes it to the

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Blocks.Attack;
 using Blocks.Character;
 using Blocks.GameFeel;
@@ -31,9 +32,25 @@ namespace Blocks.HUD
         const string k_RespawnCountdownName = "respawn-countdown";
         const string k_PauseHintKeyName = "pause-hint-key";
         const string k_AttackSlotsName = "attack-slots";
+        const string k_RemoteHudContainerName = "remote-hud-container";
+
+        static readonly Color[] s_RemoteAvatarTints = new[]
+        {
+            new Color(0.55f, 0.85f, 1f),      // Light Blue
+            new Color(0.6f, 0.95f, 0.7f),     // Emerald Green
+            new Color(1f, 0.85f, 0.45f),      // Golden Amber
+            new Color(0.9f, 0.65f, 1f),       // Orchid Purple
+            new Color(1f, 0.65f, 0.65f),      // Coral Pink
+            new Color(0.5f, 1f, 0.95f),       // Cyan Aqua
+        };
 
         [Header("References")]
         [SerializeField] BuildingBlocksCharacter character;
+
+        [Header("Remote Players")]
+        [Tooltip("Initial remote characters to observe in the HUD (useful for testing in Editor).")]
+        [SerializeField] List<BuildingBlocksCharacter> remoteCharacters = new();
+        [SerializeField, HideInInspector] BuildingBlocksCharacter remoteCharacter;
 
         [Header("Pause")]
         [Tooltip("The action that opens and closes the menu. Drag the 'PauseMenu' action out of " +
@@ -50,6 +67,9 @@ namespace Blocks.HUD
                  "animates while the game is frozen.")]
         [SerializeField, Min(0f)] float fadeDuration = 0.15f;
 
+        public static PlayerHUD Instance { get; private set; }
+        public BuildingBlocksCharacter LocalCharacter => character;
+
         UIDocument m_UIDocument;
         VisualElement m_HudLayer;
         StatBarStack m_Stack;
@@ -59,6 +79,9 @@ namespace Blocks.HUD
         Label m_RespawnCountdown;
         InputActionMap m_GameplayMap;
         PlayerAttackAbility m_Attack;
+
+        VisualElement m_RemoteHudContainer;
+        readonly List<RemotePlayerHudEntry> m_RemoteEntries = new();
 
         bool m_IsPaused;
         float m_HudOpacity = 1f;
@@ -76,7 +99,13 @@ namespace Blocks.HUD
 
         void Awake()
         {
+            Instance = this;
             m_UIDocument = GetComponent<UIDocument>();
+
+            if (character != null && CharacterManager.Instance != null && CharacterManager.Instance.LocalCharacter == null)
+            {
+                CharacterManager.Instance.RegisterLocalCharacter(0, character);
+            }
 
             if (character == null)
             {
@@ -103,6 +132,12 @@ namespace Blocks.HUD
             m_GameplayMap = pauseAction.action.actionMap;
         }
 
+        void OnDestroy()
+        {
+            ClearRemoteCharacters();
+            if (Instance == this) Instance = null;
+        }
+
         void OnEnable()
         {
             if (pauseAction != null && pauseAction.action != null)
@@ -115,11 +150,17 @@ namespace Blocks.HUD
             // already exist and have to be hooked up again, because OnDisable unhooked them. Both Bind
             // calls ignore a second call, so this is safe either way.
             m_Stack?.Bind();
+            for (int i = 0; i < m_RemoteEntries.Count; i++)
+            {
+                m_RemoteEntries[i].Bind();
+            }
             if (m_Menu != null) m_Menu.Bind();
 
-            if (character == null) return;
-            character.OnRespawning += HandleRespawning;
-            character.OnRespawned += HandleRespawned;
+            if (character != null)
+            {
+                character.OnRespawning += HandleRespawning;
+                character.OnRespawned += HandleRespawned;
+            }
         }
 
         void Start()
@@ -142,10 +183,17 @@ namespace Blocks.HUD
 
             m_Menu?.Unbind();
 
-            if (character == null) return;
-            character.OnRespawning -= HandleRespawning;
-            character.OnRespawned -= HandleRespawned;
+            if (character != null)
+            {
+                character.OnRespawning -= HandleRespawning;
+                character.OnRespawned -= HandleRespawned;
+            }
+
             m_Stack?.Unbind();
+            for (int i = 0; i < m_RemoteEntries.Count; i++)
+            {
+                m_RemoteEntries[i].Unbind();
+            }
         }
 
         void Update()
@@ -201,7 +249,7 @@ namespace Blocks.HUD
 
         public void ConnectToServer(string ip, string port)
         {
-            NetworkManager.Instance.Connect(ip, int.Parse(port));
+            _ = NetworkManager.Instance.Connect(ip, int.Parse(port));
         }
 
         void BuildUi()
@@ -239,18 +287,31 @@ namespace Blocks.HUD
             m_RespawnCountdown = root.Q<Label>(k_RespawnCountdownName);
             HideRespawnOverlay();
 
-            if (character == null) return;
+            m_RemoteHudContainer = root.Q<VisualElement>(k_RemoteHudContainerName);
+            ClearRemoteCharacters();
 
-            VisualElement container = root.Q<VisualElement>(k_StackName);
-            if (container == null)
+            for (int i = 0; i < remoteCharacters.Count; i++)
             {
-                Debug.LogWarning($"[PlayerHUD] '{k_StackName}' not found in UIDocument.", this);
-                return;
+                if (remoteCharacters[i] != null)
+                {
+                    AddRemoteCharacter(remoteCharacters[i]);
+                }
             }
 
-            m_Stack = new StatBarStack(character, container);
-            m_Stack.Build();
-            m_Stack.Bind();
+            if (character != null)
+            {
+                VisualElement container = root.Q<VisualElement>(k_StackName);
+                if (container == null)
+                {
+                    Debug.LogWarning($"[PlayerHUD] '{k_StackName}' not found in UIDocument.", this);
+                }
+                else
+                {
+                    m_Stack = new StatBarStack(character, container);
+                    m_Stack.Build();
+                    m_Stack.Bind();
+                }
+            }
         }
 
         void UpdateHudFade(float step)
@@ -310,7 +371,7 @@ namespace Blocks.HUD
 
         void UpdateAttackSlots()
         {
-            if (m_AttackSlots == null || m_Attack == null) return;
+            if (m_AttackSlots == null || m_Attack == null || character == null) return;
 
             // Grounded is passed as availability because the attacks refuse to start in the air, and
             // nothing else on screen says so: the rings dim instead of the press vanishing silently.
@@ -360,5 +421,129 @@ namespace Blocks.HUD
             if (m_RespawnOverlay == null) return;
             m_RespawnOverlay.style.display = DisplayStyle.None;
         }
+
+        #region Remote Players Management
+
+        /// <summary>
+        /// Read-only access to all current remote player entries.
+        /// </summary>
+        public IReadOnlyList<RemotePlayerHudEntry> RemotePlayers => m_RemoteEntries;
+
+        /// <summary>
+        /// Adds a remote character to the HUD list.
+        /// </summary>
+        /// <param name="remoteChar">The character to track.</param>
+        /// <param name="displayName">Display name (defaults to character name or "Player {N}").</param>
+        /// <param name="id">Optional unique ID (e.g. client ID or player index). Defaults to character.</param>
+        /// <returns>The created RemotePlayerHudEntry.</returns>
+        public RemotePlayerHudEntry AddRemoteCharacter(
+            BuildingBlocksCharacter remoteChar,
+            string displayName = null,
+            object id = null)
+        {
+            if (remoteChar == null || m_RemoteHudContainer == null) return null;
+
+            id ??= remoteChar;
+
+            // If an entry with this ID already exists, remove it first
+            RemoveRemotePlayer(id);
+
+            int playerIndex = m_RemoteEntries.Count;
+            if (string.IsNullOrEmpty(displayName))
+            {
+                displayName = !string.IsNullOrEmpty(remoteChar.name) ? remoteChar.name : $"Player {playerIndex + 2}";
+            }
+
+            Color tint = s_RemoteAvatarTints[playerIndex % s_RemoteAvatarTints.Length];
+            var entry = new RemotePlayerHudEntry(id, remoteChar, displayName, m_RemoteHudContainer, tint);
+            m_RemoteEntries.Add(entry);
+
+            m_RemoteHudContainer.style.display = DisplayStyle.Flex;
+            return entry;
+        }
+
+        /// <summary>
+        /// Removes a remote character by character reference.
+        /// </summary>
+        public bool RemoveRemoteCharacter(BuildingBlocksCharacter remoteChar)
+        {
+            if (remoteChar == null) return false;
+            for (int i = m_RemoteEntries.Count - 1; i >= 0; i--)
+            {
+                if (m_RemoteEntries[i].Character == remoteChar)
+                {
+                    m_RemoteEntries[i].Destroy();
+                    m_RemoteEntries.RemoveAt(i);
+                    if (m_RemoteEntries.Count == 0 && m_RemoteHudContainer != null)
+                    {
+                        m_RemoteHudContainer.style.display = DisplayStyle.None;
+                    }
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Removes a remote player by ID.
+        /// </summary>
+        public bool RemoveRemotePlayer(object id)
+        {
+            if (id == null) return false;
+            for (int i = m_RemoteEntries.Count - 1; i >= 0; i--)
+            {
+                if (Equals(m_RemoteEntries[i].Id, id))
+                {
+                    m_RemoteEntries[i].Destroy();
+                    m_RemoteEntries.RemoveAt(i);
+                    if (m_RemoteEntries.Count == 0 && m_RemoteHudContainer != null)
+                    {
+                        m_RemoteHudContainer.style.display = DisplayStyle.None;
+                    }
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Clears all remote player entries from the HUD.
+        /// </summary>
+        public void ClearRemoteCharacters()
+        {
+            for (int i = 0; i < m_RemoteEntries.Count; i++)
+            {
+                m_RemoteEntries[i].Destroy();
+            }
+            m_RemoteEntries.Clear();
+            if (m_RemoteHudContainer != null)
+            {
+                m_RemoteHudContainer.style.display = DisplayStyle.None;
+            }
+        }
+
+        /// <summary>
+        /// Sets a single remote character, clearing any previous ones.
+        /// Provided for simple 1v1 scenarios and backwards compatibility.
+        /// </summary>
+        public void SetRemoteCharacter(BuildingBlocksCharacter remoteChar, string displayName = "Player 2")
+        {
+            ClearRemoteCharacters();
+            if (remoteChar != null)
+            {
+                AddRemoteCharacter(remoteChar, displayName);
+            }
+        }
+
+        /// <summary>
+        /// Toggles visibility of the entire remote players list container.
+        /// </summary>
+        public void SetRemoteHudVisible(bool visible)
+        {
+            if (m_RemoteHudContainer == null) return;
+            m_RemoteHudContainer.style.display = visible ? DisplayStyle.Flex : DisplayStyle.None;
+        }
+
+        #endregion
     }
 }

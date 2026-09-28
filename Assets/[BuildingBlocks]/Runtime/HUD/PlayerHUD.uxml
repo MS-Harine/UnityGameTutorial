@@ -5,6 +5,9 @@
     <!-- Everything the player sees while playing lives under hud-layer, which is what fades out when
          the game is paused. The menu is a sibling, so it isn't caught by that fade. -->
     <ui:VisualElement name="hud-layer" picking-mode="Ignore" class="hud-layer">
+        <!-- Remote Players HUD List (Party / Connected players status) -->
+        <ui:VisualElement name="remote-hud-container" picking-mode="Ignore" class="remote-hud-container"/>
+
         <ui:VisualElement name="player-hud-corner" picking-mode="Ignore" class="player-hud-corner">
             <ui:VisualElement name="avatar-frame" picking-mode="Ignore" class="avatar-frame">
                 <ui:VisualElement name="avatar-image" picking-mode="Ignore" class="avatar-image"/>

@@ -18,7 +18,7 @@ namespace Blocks.Character
         // How the hit moves the victim. Authored by the attack; see HitReaction.
         public readonly HitReaction Reaction;
 
-        public DamageInfo(float amount, BuildingBlocksCharacter source, Vector2 hitPoint, Vector2 direction,
+        public DamageInfo(float amount, BuildingBlocksCharacter source = null, Vector2 hitPoint = default, Vector2 direction = default,
                           HitReaction reaction = default)
         {
             Amount = amount;

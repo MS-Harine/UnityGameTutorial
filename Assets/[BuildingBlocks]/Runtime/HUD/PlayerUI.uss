@@ -44,9 +44,52 @@
     flex-grow: 1;
 }
 
+/* ---------------------------------------------------------------------------------------------
+   Remote HUD container — Party / other players' status list, placed above the local player corner
+   --------------------------------------------------------------------------------------------- */
+.remote-hud-container {
+    position: absolute;
+    bottom: 170px;
+    left: var(--margin-md);
+    width: 340px;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+}
+
+.remote-hud-item {
+    width: 100%;
+    min-height: 52px;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 8px;
+    transition-property: opacity;
+    transition-duration: 0.2s;
+}
+
+.avatar-image--remote {
+    -unity-background-image-tint-color: rgb(130, 200, 255);
+}
+
+.remote-player-name {
+    font-size: var(--text-xs);
+    -unity-font-style: bold;
+    color: var(--color-default);
+    letter-spacing: 0;
+    margin-bottom: 2px;
+}
+
 .avatar-frame {
     width: 84px;
     height: 84px;
+    margin-right: var(--margin-sm);
+    flex-shrink: 0;
+}
+
+.avatar-frame.avatar-frame--sm {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
     margin-right: var(--margin-sm);
     flex-shrink: 0;
 }

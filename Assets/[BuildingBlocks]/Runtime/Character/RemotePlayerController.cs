@@ -110,6 +110,12 @@ namespace Blocks.Character
             m_TargetPosition = position;
             m_TargetVelocity = velocity;
             m_TargetFacingRight = facingRight;
+
+            // Apply vertical velocity on packet arrival (e.g. Jump or Land)
+            if (Character != null && (Mathf.Abs(velocity.y) > 0.01f || Mathf.Approximately(velocity.x, 0f)))
+            {
+                Character.SetVerticalVelocity(velocity.y);
+            }
         }
 
         /// <summary>
@@ -126,13 +132,29 @@ namespace Blocks.Character
             transform.position = position;
             m_TargetPosition = position;
             m_TargetVelocity = Vector2.zero;
+            if (Character != null)
+            {
+                Character.SetVerticalVelocity(0f);
+            }
         }
 
         protected override void OnUpdate()
         {
             if (Character == null || Character.IsEliminated) return;
 
-            // 1. Position interpolation
+            // 1. Dead reckoning: advance horizontal target position while moving
+            if (Mathf.Abs(m_TargetVelocity.x) > 0.001f)
+            {
+                m_TargetPosition.x += m_TargetVelocity.x * Time.deltaTime;
+            }
+
+            // While airborne, let gravity and physics drive vertical movement without MoveTowards fighting it
+            if (!Character.IsGrounded)
+            {
+                m_TargetPosition.y = transform.position.y;
+            }
+
+            // 2. Position interpolation / reconciliation
             float distance = Vector2.Distance(transform.position, m_TargetPosition);
             if (distance > snapDistance)
             {
@@ -143,18 +165,11 @@ namespace Blocks.Character
                 transform.position = Vector3.MoveTowards(transform.position, m_TargetPosition, interpolationSpeed * Time.deltaTime);
             }
 
-            // If we've reached the target position and target velocity is very small, gently dampen it
-            if (distance < 0.02f)
-            {
-                m_TargetVelocity = Vector2.Lerp(m_TargetVelocity, Vector2.zero, Time.deltaTime * 10f);
-            }
-
-            // 2. Feed velocity to BuildingBlocksCharacter's MovementModule
-            // Character.AddMovement feeds m_AdditiveMovement.x for horizontal velocity
+            // 3. Feed horizontal velocity to BuildingBlocksCharacter's MovementModule
+            // Character.AddMovement feeds m_AdditiveMovement.x for animation and physics
             Character.AddMovement(new Vector2(m_TargetVelocity.x, 0f));
-            Character.SetVerticalVelocity(m_TargetVelocity.y);
 
-            // 3. Facing direction
+            // 4. Facing direction
             Vector2 faceTarget = (Vector2)transform.position + (m_TargetFacingRight ? Vector2.right : Vector2.left);
             Character.FacePosition(faceTarget);
         }

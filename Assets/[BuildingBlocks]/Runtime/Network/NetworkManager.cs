@@ -23,14 +23,14 @@ namespace Blocks.Network
         public event Action<NetworkState, string> OnNetworkStateChanged;
         public event Action<byte[]> OnDataReceived;
 
-        private readonly TcpClient m_Client = new();
+        private TcpClient m_Client = new();
         private IPAddress m_IpAddress;
         private int m_Port;
         private readonly ConcurrentQueue<byte[]> m_ReceiveQueue = new();
         private bool reset_connection = false;
         private CancellationTokenSource m_ReceiveCancellationTokenSource;
     
-        public string IpAddress => m_IpAddress.ToString();
+        public string IpAddress => m_IpAddress?.ToString() ?? string.Empty;
         public int Port => m_Port;
 
         public async Task Connect(string ipAddress, int port)
@@ -45,6 +45,11 @@ namespace Blocks.Network
             m_IpAddress = IPAddress.Parse(ipAddress);
             m_Port = port;
 
+            if (m_Client == null)
+            {
+                m_Client = new TcpClient();
+            }
+
             try
             {
                 await m_Client.ConnectAsync(m_IpAddress, m_Port);
@@ -54,6 +59,7 @@ namespace Blocks.Network
             catch (Exception ex)
             {
                 ChangeState(NetworkState.Disconnected, ex.Message.Trim());
+                Disconnect();
             }
         }
 
@@ -64,14 +70,16 @@ namespace Blocks.Network
                 reset_connection = true;
                 m_ReceiveCancellationTokenSource?.Cancel();
                 ChangeState(NetworkState.Disconnected);
-                m_Client.Close();
                 m_ReceiveQueue.Clear();
             }
+            
+            m_Client?.Close();
+            m_Client = null;
         }
 
         public bool IsConnected()
         {
-            return m_Client.Connected;
+            return m_Client != null && m_Client.Connected;
         }
 
         public async Task SendData(byte[] data)

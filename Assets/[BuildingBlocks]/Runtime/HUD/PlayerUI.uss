@@ -440,6 +440,7 @@
     align-items: center;
 }
 
+.server-connection__field--ip,
 .server-connection__field--port {
     margin-left: var(--margin-md);
 }
@@ -452,14 +453,18 @@
 }
 
 .server-connection__text-field {
-    width: 150px;
+    width: 140px;
     height: 30px;
     margin: 0;
     padding: 0;
 }
 
+.server-connection__field--name .server-connection__text-field {
+    width: 110px;
+}
+
 .server-connection__field--port .server-connection__text-field {
-    width: 80px;
+    width: 70px;
 }
 
 .server-connection__text-field > .unity-base-field__input {

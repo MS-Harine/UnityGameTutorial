@@ -19,6 +19,7 @@ namespace Blocks.HUD
         const string k_ColumnsName = "pause-menu-columns";
         const string k_ResumeName = "resume-button";
         const string k_QuitName = "quit-button";
+        const string k_PlayerNameInputName = "player-name-input";
         const string k_IpInputName = "ip-input";
         const string k_PortInputName = "port-input";
         const string k_ConnectButtonName = "connect-button";
@@ -38,10 +39,13 @@ namespace Blocks.HUD
         const string k_ThemeHeaderClass = "blocks-header";
         const string k_ThemeHeaderSmallClass = "blocks-header--sm";
 
+        const long k_AutoResumeDelayMs = 500;
+
         readonly VisualElement m_Root;
         readonly VisualElement m_Columns;
         readonly Button m_Resume;
         readonly Button m_Quit;
+        readonly TextField m_PlayerNameInput;
         readonly TextField m_IpInput;
         readonly TextField m_PortInput;
         readonly Button m_ConnectButton;
@@ -56,9 +60,10 @@ namespace Blocks.HUD
         /// <summary>Raised when Quit is pressed.</summary>
         public event Action QuitRequested;
 
-        /// <summary>Raised when Connect is pressed. Passes IP and Port.</summary>
-        public event Action<string, string> ConnectRequested;
+        /// <summary>Raised when Connect is pressed. Passes IP, Port, and PlayerName.</summary>
+        public event Action<string, string, string> ConnectRequested;
 
+        public string PlayerName => m_PlayerNameInput?.value ?? string.Empty;
         public string IpAddress => m_IpInput?.value ?? string.Empty;
         public string Port => m_PortInput?.value ?? string.Empty;
         public bool IsConnected => m_IsConnected;
@@ -74,26 +79,21 @@ namespace Blocks.HUD
             m_Columns = m_Root.Q<VisualElement>(k_ColumnsName);
             m_Resume = m_Root.Q<Button>(k_ResumeName);
             m_Quit = m_Root.Q<Button>(k_QuitName);
+            m_PlayerNameInput = m_Root.Q<TextField>(k_PlayerNameInputName);
             m_IpInput = m_Root.Q<TextField>(k_IpInputName);
             m_PortInput = m_Root.Q<TextField>(k_PortInputName);
             m_ConnectButton = m_Root.Q<Button>(k_ConnectButtonName);
             m_StatusLabel = m_Root.Q<Label>(k_StatusLabelName);
 
-            NetworkManager.Instance.OnNetworkStateChanged += (state, message) =>
+            if (m_PlayerNameInput != null && PacketManager.Instance != null && !string.IsNullOrEmpty(PacketManager.Instance.LocalUsername))
             {
-                if (state == NetworkState.Connected)
-                {
-                    SetConnectionStatus(true, message);
-                }
-                else if (state == NetworkState.Connecting)
-                {
-                    SetConnectionStatus(false, "Connecting...");
-                }
-                else if (state == NetworkState.Disconnected)
-                {
-                    SetConnectionStatus(false, message);
-                }
-            };
+                m_PlayerNameInput.value = PacketManager.Instance.LocalUsername;
+            }
+
+            if (NetworkManager.Instance.IsConnected())
+            {
+                SetConnectionStatus(true, "Success");
+            }
         }
 
         /// <summary>Fills the columns from <paramref name="sections"/>. Safe to call again after a rebind.</summary>
@@ -119,6 +119,7 @@ namespace Blocks.HUD
             if (m_Resume != null) m_Resume.clicked += HandleResumeClicked;
             if (m_Quit != null) m_Quit.clicked += HandleQuitClicked;
             if (m_ConnectButton != null) m_ConnectButton.clicked += HandleConnectClicked;
+            NetworkManager.Instance.OnNetworkStateChanged += HandleNetworkStateChanged;
         }
 
         public void Unbind()
@@ -129,6 +130,7 @@ namespace Blocks.HUD
             if (m_Resume != null) m_Resume.clicked -= HandleResumeClicked;
             if (m_Quit != null) m_Quit.clicked -= HandleQuitClicked;
             if (m_ConnectButton != null) m_ConnectButton.clicked -= HandleConnectClicked;
+            NetworkManager.Instance.OnNetworkStateChanged -= HandleNetworkStateChanged;
         }
 
         /// <summary>
@@ -216,7 +218,32 @@ namespace Blocks.HUD
 
         void HandleQuitClicked() => QuitRequested?.Invoke();
 
-        void HandleConnectClicked() => ConnectRequested?.Invoke(IpAddress, Port);
+        void HandleConnectClicked() => ConnectRequested?.Invoke(IpAddress, Port, PlayerName);
+
+        void HandleNetworkStateChanged(NetworkState state, string message)
+        {
+            if (state == NetworkState.Connected)
+            {
+                string text = string.IsNullOrWhiteSpace(message) ? "Success" : message;
+                SetConnectionStatus(true, text);
+
+                m_Root?.schedule.Execute(() =>
+                {
+                    if (m_IsConnected)
+                    {
+                        ResumeRequested?.Invoke();
+                    }
+                }).StartingIn(k_AutoResumeDelayMs);
+            }
+            else if (state == NetworkState.Connecting)
+            {
+                SetConnectionStatus(false, "Connecting...");
+            }
+            else if (state == NetworkState.Disconnected)
+            {
+                SetConnectionStatus(false, message);
+            }
+        }
 
         /// <summary>
         /// Updates the connection status UI. Only controls display state; performs no network logic.
@@ -231,12 +258,12 @@ namespace Blocks.HUD
 
             if (isConnected)
             {
-                m_StatusLabel.text = (statusText ?? "Status: Connected").Trim();
+                m_StatusLabel.text = (string.IsNullOrWhiteSpace(statusText) ? "Success" : statusText).Trim();
                 m_StatusLabel.AddToClassList(k_StatusConnectedClass);
             }
             else
             {
-                m_StatusLabel.text = (statusText ?? "Status: Disconnected").Trim();
+                m_StatusLabel.text = (string.IsNullOrWhiteSpace(statusText) ? "Status: Disconnected" : statusText).Trim();
                 m_StatusLabel.AddToClassList(k_StatusDisconnectedClass);
             }
         }

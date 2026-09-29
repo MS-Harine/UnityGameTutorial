@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using Blocks.Audio;
 using Blocks.Character;
 using Blocks.Extras;
+using Blocks.Network;
 
 namespace Blocks.Movement
 {
@@ -88,6 +89,7 @@ namespace Blocks.Movement
         float m_RunDustTimer;
         float m_DistanceSinceFootstep;
         AudioHelper m_Audio;
+        float m_LastSentTargetSpeed;
 
         protected override void OnInitialize()
         {
@@ -118,6 +120,8 @@ namespace Blocks.Movement
             m_HorizontalSpeed = 0f;
             m_CanCutJump = false;
             m_RunDustTimer = 0f;
+            m_LastSentTargetSpeed = 0f;
+            SendNetworkMove(0f, 0f);
         }
 
         protected override void OnUpdate()
@@ -141,6 +145,12 @@ namespace Blocks.Movement
 
             float maxSpeed = isSprinting ? runSpeed : walkSpeed;
             float targetSpeed = hasInput ? Mathf.Sign(inputX) * maxSpeed : 0f;
+
+            if (!Mathf.Approximately(targetSpeed, m_LastSentTargetSpeed))
+            {
+                m_LastSentTargetSpeed = targetSpeed;
+                SendNetworkMove(targetSpeed, Character.VerticalVelocity);
+            }
 
             float rate = hasInput ? acceleration : deceleration;
             bool isReversing = hasInput &&
@@ -247,6 +257,22 @@ namespace Blocks.Movement
         {
             SpawnVfx(landVfxPrefab, FeetPosition);
             m_Audio.Play(landClip, landVolume);
+            SendNetworkMove(m_LastSentTargetSpeed, 0f);
+        }
+
+        void SendNetworkMove(float targetSpeedX, float velocityY)
+        {
+            if (Character == null) return;
+            if (PacketManager.Instance == null || NetworkManager.Instance == null || !NetworkManager.Instance.IsConnected())
+            {
+                return;
+            }
+
+            Vector2 pos = Character.transform.position;
+            Vector2 vel = new Vector2(targetSpeedX, velocityY);
+            bool facingRight = targetSpeedX > 0.01f ? true : (targetSpeedX < -0.01f ? false : Character.FacingDirection >= 0f);
+
+            PacketManager.Instance.SendMove(pos, vel, facingRight);
         }
 
         void TickFootsteps(float deltaTime)

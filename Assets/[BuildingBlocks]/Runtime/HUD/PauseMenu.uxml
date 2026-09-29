@@ -10,7 +10,12 @@
             <ui:VisualElement name="server-connection-section" class="server-connection">
                 <ui:Label text="Server Connection" class="blocks-header blocks-header--sm server-connection__header"/>
                 <ui:VisualElement class="server-connection__inputs">
-                    <ui:VisualElement class="server-connection__field">
+                    <ui:VisualElement class="server-connection__field server-connection__field--name">
+                        <ui:Label text="Name" class="server-connection__label"/>
+                        <ui:TextField name="player-name-input" value="Player" class="server-connection__text-field"/>
+                    </ui:VisualElement>
+
+                    <ui:VisualElement class="server-connection__field server-connection__field--ip">
                         <ui:Label text="Ip Address" class="server-connection__label"/>
                         <ui:TextField name="ip-input" value="127.0.0.1" class="server-connection__text-field"/>
                     </ui:VisualElement>

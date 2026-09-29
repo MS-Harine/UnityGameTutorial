@@ -104,7 +104,7 @@ namespace Blocks.HUD
 
             if (character != null && CharacterManager.Instance != null && CharacterManager.Instance.LocalCharacter == null)
             {
-                CharacterManager.Instance.RegisterLocalCharacter(0, character);
+                CharacterManager.Instance.RegisterLocalCharacter(CharacterManager.InvalidPlayerId, character);
             }
 
             if (character == null)
@@ -247,10 +247,16 @@ namespace Blocks.HUD
 #endif
         }
 
-        public void ConnectToServer(string ip, string port)
+        public void ConnectToServer(string ip, string port, string playerName = null)
         {
+            if (PacketManager.Instance != null)
+            {
+                PacketManager.Instance.LocalUsername = string.IsNullOrWhiteSpace(playerName) ? "Player" : playerName.Trim();
+            }
             _ = NetworkManager.Instance.Connect(ip, int.Parse(port));
         }
+
+        public void ConnectToServer(string ip, string port) => ConnectToServer(ip, port, null);
 
         void BuildUi()
         {

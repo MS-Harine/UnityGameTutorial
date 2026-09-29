@@ -36,10 +36,11 @@ namespace Blocks.Character
         [Tooltip("Prefab instantiated when a remote player joins.")]
         [SerializeField] GameObject remotePlayerPrefab;
 
+        public const ulong InvalidPlayerId = ulong.MaxValue;
         [Header("Local Player")]
         [Tooltip("Local player character. Auto-detected from scene if empty.")]
         [SerializeField] BuildingBlocksCharacter localCharacter;
-        [SerializeField] ulong localPlayerId = 0;
+        [SerializeField] ulong localPlayerId = InvalidPlayerId;
 
         readonly Dictionary<ulong, BuildingBlocksCharacter> m_Characters = new();
         readonly Dictionary<ulong, RemotePlayerController> m_RemoteControllers = new();
@@ -141,7 +142,7 @@ namespace Blocks.Character
         /// </summary>
         public BuildingBlocksCharacter SpawnRemotePlayer(ulong id, Vector3 spawnPosition, string displayName = null)
         {
-            if (id == localPlayerId)
+            if (localPlayerId != InvalidPlayerId && id == localPlayerId)
             {
                 Debug.LogWarning($"[CharacterManager] ID {id} matches LocalPlayerId. Skipping remote spawn.");
                 return localCharacter;
@@ -158,12 +159,7 @@ namespace Blocks.Character
             {
                 prefabToSpawn = Resources.Load<GameObject>("RemotePlayer");
             }
-#if UNITY_EDITOR
-            if (prefabToSpawn == null)
-            {
-                prefabToSpawn = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>("Assets/[BuildingBlocks]/Prefabs/RemotePlayer.prefab");
-            }
-#endif
+            
             if (prefabToSpawn == null)
             {
                 Debug.LogError("[CharacterManager] Remote player prefab is not assigned or found! Cannot spawn remote player.");
@@ -363,26 +359,5 @@ namespace Blocks.Character
         public bool TryGetRemoteController(ulong id, out RemotePlayerController controller) => m_RemoteControllers.TryGetValue(id, out controller);
 
         #endregion
-
-#if UNITY_EDITOR
-        [ContextMenu("Debug: Spawn Test Remote Player 1")]
-        void TestSpawnRemotePlayer1()
-        {
-            Vector3 spawnPos = localCharacter != null ? localCharacter.transform.position + Vector3.right * 2f : Vector3.zero;
-            SpawnRemotePlayer(1, spawnPos, "Player 1");
-        }
-
-        [ContextMenu("Debug: Damage Test Remote Player 1 (25 HP)")]
-        void TestDamageRemotePlayer1()
-        {
-            ApplyDamage(1, 25f);
-        }
-
-        [ContextMenu("Debug: Despawn Test Remote Player 1")]
-        void TestDespawnRemotePlayer1()
-        {
-            DespawnRemotePlayer(1);
-        }
-#endif
     }
 }

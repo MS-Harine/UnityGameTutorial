@@ -78,21 +78,6 @@ namespace Blocks.Network
                 username = username
             };
             SendPacket(connectPacket.Serialize());
-
-            // 2. Send C2S_SetPosition (initial local player spawn coordinates)
-            var localChar = CharacterManager.Instance?.LocalCharacter;
-            if (localChar != null)
-            {
-                var pos = localChar.transform.position;
-                var setPosPacket = new C2S_SetPosition
-                {
-                    x = pos.x,
-                    y = pos.y,
-                    facing_right = localChar.FacingDirection >= 0,
-                    reset_velocity = true
-                };
-                SendPacket(setPosPacket.Serialize());
-            }
         }
 
         private void OnDisconnectedFromServer()
@@ -108,6 +93,24 @@ namespace Blocks.Network
         {
             if (packetBytes == null || packetBytes.Length == 0) return;
             _ = m_NetworkManager.SendData(packetBytes);
+        }
+
+        /// <summary>
+        /// Sends C2S_Move packet containing current position, velocity, and facing direction.
+        /// </summary>
+        public void SendMove(Vector2 position, Vector2 velocity, bool facingRight)
+        {
+            if (m_NetworkManager == null || !m_NetworkManager.IsConnected()) return;
+
+            var movePacket = new C2S_Move
+            {
+                x = position.x,
+                y = position.y,
+                vx = velocity.x,
+                vy = velocity.y,
+                facing_right = facingRight
+            };
+            SendPacket(movePacket.Serialize());
         }
 
         private void RegisterPacketHandlers()
@@ -227,6 +230,20 @@ namespace Blocks.Network
             if (!packet.is_other_user)
             {
                 CharacterManager.Instance.LocalPlayerId = (ulong)packet.userid;
+                
+                var localChar = CharacterManager.Instance?.LocalCharacter;
+                if (localChar != null)
+                {
+                    var pos = localChar.transform.position;
+                    var setPosPacket = new C2S_SetPosition
+                    {
+                        x = pos.x,
+                        y = pos.y,
+                        facing_right = localChar.FacingDirection >= 0,
+                        reset_velocity = true
+                    };
+                    SendPacket(setPosPacket.Serialize());
+                }
             }
             else
             {
@@ -265,13 +282,10 @@ namespace Blocks.Network
             else
             {
                 var controller = CharacterManager.Instance.GetRemoteController((ulong)packet.userid);
+                Debug.Log($"Player {packet.userid}, Controller: {controller}");
                 if (controller != null)
                 {
                     controller.SetPositionImmediate(targetPos);
-                }
-                else
-                {
-                    CharacterManager.Instance.SpawnRemotePlayer((ulong)packet.userid, targetPos);
                 }
             }
         }
